@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+   Copyright 2021 by the Haxe4E authors.
+   SPDX-License-Identifier: EPL-2.0
+
+   @author Sebastian Thomschke
+-->
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <modelVersion>4.0.0</modelVersion>
+
+   <parent>
+      <groupId>org.haxe4e.studio</groupId>
+      <artifactId>org.haxe4e.studio.parent</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+   </parent>
+
+   <name>haxe4e-studio-product</name>
+   <artifactId>org.haxe4e.studio.product</artifactId>
+   <packaging>eclipse-repository</packaging>
+
+   <build>
+      <plugins>
+         <plugin>
+            <!-- https://wiki.eclipse.org/Tycho/eclipse-repository#Creating_product_distributions -->
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>tycho-p2-director-plugin</artifactId>
+            <executions>
+               <execution>
+                  <id>create-product-distributions</id>
+                  <goals>
+                     <goal>materialize-products</goal>
+                     <goal>archive-products</goal>
+                  </goals>
+               </execution>
+            </executions>
+            <configuration>
+               <products>
+                  <product>
+                     <id>org.haxe4e.studio</id>
+                  </product>
+               </products>
+               <formats>
+                  <macosx>tar.gz</macosx>
+                  <linux>tar.gz</linux>
+                  <win32>zip</win32>
+               </formats>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+</project>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.core.runtime.products" id="product">
+      <!-- this is referenced in haxe4e.product as [plugin_id].[product_id], i.e. "org.haxe4e.studio.plugin.product" -->
+      <!-- https://www.eclipse.org/articles/Article-Branding/branding-your-application.html -->
+      <product application="org.eclipse.ui.ide.workbench" name="Haxe Studio">
+         <property name="appName" value="Haxe Studio"/>
+         <property
+               name="aboutText"
+               value="HaxeStudio - Eclipse based Haxe IDE">
+         </property>
+         <property
+               name="windowImages"
+               value="src/main/resources/images/logo/haxe_logo16x16.png,src/main/resources/images/logo/haxe_logo32x32.png,src/main/resources/images/logo/haxe_logo48x48.png,src/main/resources/images/logo/haxe_logo64x64.png,src/main/resources/images/logo/haxe_logo128x128.png,src/main/resources/images/logo/haxe_logo256x256.png">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

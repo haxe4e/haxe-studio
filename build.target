@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?>
+<target includeMode="feature" name="Haxe Studio Build Target">
+    <locations>
+
+        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+            <repository location="https://download.eclipse.org/cbi/updates/license"/>
+            <unit id="org.eclipse.license.feature.group" version="0.0.0"/>
+        </location>
+
+        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+            <repository location="https://download.eclipse.org/justj/jres/11/updates/release"/>
+            <unit id="org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped.feature.group" version="0.0.0"/>
+        </location>
+
+        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+            <repository location="https://download.eclipse.org/releases/latest/"/>
+            <unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.sdk.ide" version="0.0.0"/>
+            <unit id="org.eclipse.mylyn.wikitext_feature.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.wildwebdeveloper.embedder.node.feature.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.wildwebdeveloper.feature.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.egit.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.egit.gitflow.feature.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.jgit.feature.group" version="0.0.0"/>
+        </location>
+
+        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+            <repository location="https://download.eclipse.org/lsp4e/releases/latest/"/>
+            <unit id="org.eclipse.lsp4e" version="0.0.0"/>
+            <unit id="org.eclipse.lsp4e.debug" version="0.0.0"/>
+        </location>
+
+        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+            <repository location="https://download.eclipse.org/tm4e/releases/latest/"/>
+            <unit id="org.eclipse.tm4e.feature.feature.group" version="0.0.0"/>
+        </location>
+
+        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+            <repository location="https://raw.githubusercontent.com/haxe4e/haxe4e/updatesite/"/>
+            <unit id="org.haxe4e.feature.feature.group" version="0.0.0"/>
+        </location>
+
+        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+            <!-- Shell/Bash File Editor -->
+            <repository location="https://download.eclipse.org/shellwax/releases/latest/"/>
+            <unit id="org.eclipse.shellwax.feature.feature.group" version="0.0.0"/>
+        </location>
+
+        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+            <!-- Windows Batch File Editor -->
+            <repository location="https://de-jcup.github.io/update-site-eclipse-batch-editor/update-site/"/>
+            <unit id="de.jcup.batcheditor.feature.group" version="1.2.0"/>
+        </location>
+
+        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+            <!-- EasyShell Plugin https://github.com/anb0s/EasyShell -->
+            <repository location="https://anb0s.github.io/EasyShell"/>
+            <unit id="de.anbos.eclipse.easyshell.feature.feature.group" version="0.0.0"/>
+        </location>
+    </locations>
+</target>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+   Copyright 2021 by the Haxe4E authors.
+   SPDX-License-Identifier: EPL-2.0
+
+   @author Sebastian Thomschke
+-->
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <modelVersion>4.0.0</modelVersion>
+
+   <parent>
+      <groupId>org.haxe4e.studio</groupId>
+      <artifactId>org.haxe4e.studio.parent</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+   </parent>
+
+   <name>haxe4e-studio-plugin</name>
+   <artifactId>org.haxe4e.studio.plugin</artifactId>
+   <packaging>eclipse-plugin</packaging>
+
+   <properties>
+      <!--
+      [WARNING] Rule 0: org.apache.maven.plugins.enforcer.BanCircularDependencies failed with message:
+      Circular Dependency found. Your project's groupId:artifactId combination must not exist in the list of direct or transitive dependencies.
+        org.haxe4e:org.haxe4e
+       -->
+      <skip.enforcer.basic-checks>true</skip.enforcer.basic-checks>
+      <skip.enforcer.dependency-convergence>false</skip.enforcer.dependency-convergence>
+   </properties>
+
+   <build>
+      <resources>
+         <resource>
+            <directory>src/main/resources</directory>
+            <targetPath>src/main/resources</targetPath>
+            <filtering>false</filtering>
+         </resource>
+      </resources>
+   </build>
+
+</project>

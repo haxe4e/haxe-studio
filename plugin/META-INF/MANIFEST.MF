@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Haxe Studio Customizaton Plug-in
+Bundle-SymbolicName: org.haxe4e.studio.plugin;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: The Haxe4E Project
+Automatic-Module-Name: org.haxe4e.studio.plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ClassPath: .
