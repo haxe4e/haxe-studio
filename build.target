@@ -17,7 +17,7 @@
             <repository location="https://download.eclipse.org/releases/latest/"/>
             <unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0"/>
             <unit id="org.eclipse.sdk.ide" version="0.0.0"/>
-            <unit id="org.eclipse.mylyn.wikitext_feature.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.mylyn.wikitext.editors_feature.feature.group" version="0.0.0"/>
             <unit id="org.eclipse.wildwebdeveloper.embedder.node.feature.feature.group" version="0.0.0"/>
             <unit id="org.eclipse.wildwebdeveloper.feature.feature.group" version="0.0.0"/>
             <unit id="org.eclipse.egit.feature.group" version="0.0.0"/>

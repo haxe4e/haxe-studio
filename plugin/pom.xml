@@ -28,7 +28,14 @@
        -->
       <skip.enforcer.basic-checks>true</skip.enforcer.basic-checks>
       <skip.enforcer.dependency-convergence>false</skip.enforcer.dependency-convergence>
+
+      <!--
+      if set to true during maven build (e.g. -Dupdate-language-grammar=true), new versions of the grammar files will be downloaded
+      -->
+      <update-language-grammar>false</update-language-grammar>
    </properties>
+
+
 
    <build>
       <resources>
@@ -38,6 +45,141 @@
             <filtering>false</filtering>
          </resource>
       </resources>
+      <plugins>
+         <plugin>
+            <groupId>com.googlecode.maven-download-plugin</groupId>
+            <artifactId>download-maven-plugin</artifactId>
+            <!-- https://github.com/maven-download-plugin/maven-download-plugin/releases -->
+            <version>1.6.7</version>
+            <executions>
+               <!-- *.cpp lang config -->
+               <execution>
+                  <id>cpp.tmLanguage</id>
+                  <phase>generate-resources</phase>
+                  <goals>
+                     <goal>wget</goal>
+                  </goals>
+                  <configuration>
+                     <uri>https://raw.githubusercontent.com/textmate/c.tmbundle/master/Syntaxes/C%2B%2B.plist</uri>
+                     <outputDirectory>src/main/resources/langcfg</outputDirectory>
+                     <outputFileName>cpp.tmLanguage</outputFileName>
+                     <skipCache>true</skipCache>
+                     <overwrite>${update-language-grammar}</overwrite>
+                  </configuration>
+               </execution>
+
+               <!-- *.cs lang config -->
+               <execution>
+                  <id>csharp.tmLanguage</id>
+                  <phase>generate-resources</phase>
+                  <goals>
+                     <goal>wget</goal>
+                  </goals>
+                  <configuration>
+                     <uri>https://raw.githubusercontent.com/dotnet/csharp-tmLanguage/main/grammars/csharp.tmLanguage</uri>
+                     <outputDirectory>src/main/resources/langcfg</outputDirectory>
+                     <outputFileName>cs.tmLanguage</outputFileName>
+                     <skipCache>true</skipCache>
+                     <overwrite>${update-language-grammar}</overwrite>
+                  </configuration>
+               </execution>
+               <execution>
+                  <id>csharp.tmLanguage.license</id>
+                  <phase>generate-resources</phase>
+                  <goals>
+                     <goal>wget</goal>
+                  </goals>
+                  <configuration>
+                     <uri>https://raw.githubusercontent.com/dotnet/csharp-tmLanguage/main/LICENSE</uri>
+                     <outputDirectory>src/main/resources/langcfg</outputDirectory>
+                     <outputFileName>cs.tmLanguage.LICENSE.txt</outputFileName>
+                     <skipCache>true</skipCache>
+                     <overwrite>${update-language-grammar}</overwrite>
+                  </configuration>
+               </execution>
+
+               <!-- *.ini lang config -->
+               <execution>
+                  <id>ini.tmLanguage</id>
+                  <phase>generate-resources</phase>
+                  <goals>
+                     <goal>wget</goal>
+                  </goals>
+                  <configuration>
+                     <uri>https://raw.githubusercontent.com/textmate/ini.tmbundle/master/Syntaxes/Ini.plist</uri>
+                     <outputDirectory>src/main/resources/langcfg</outputDirectory>
+                     <outputFileName>ini.tmLanguage</outputFileName>
+                     <skipCache>true</skipCache>
+                     <overwrite>${update-language-grammar}</overwrite>
+                  </configuration>
+               </execution>
+
+               <!-- *.java lang config -->
+               <execution>
+                  <id>java.tmLanguage</id>
+                  <phase>generate-resources</phase>
+                  <goals>
+                     <goal>wget</goal>
+                  </goals>
+                  <configuration>
+                     <uri>https://raw.githubusercontent.com/textmate/java.tmbundle/master/Syntaxes/Java.plist</uri>
+                     <outputDirectory>src/main/resources/langcfg</outputDirectory>
+                     <outputFileName>java.tmLanguage</outputFileName>
+                     <skipCache>true</skipCache>
+                     <overwrite>${update-language-grammar}</overwrite>
+                  </configuration>
+               </execution>
+
+               <!-- *.lua lang config -->
+               <execution>
+                  <id>lua.tmLanguage</id>
+                  <phase>generate-resources</phase>
+                  <goals>
+                     <goal>wget</goal>
+                  </goals>
+                  <configuration>
+                     <uri>https://raw.githubusercontent.com/textmate/lua.tmbundle/master/Syntaxes/Lua.plist</uri>
+                     <outputDirectory>src/main/resources/langcfg</outputDirectory>
+                     <outputFileName>lua.tmLanguage</outputFileName>
+                     <skipCache>true</skipCache>
+                     <overwrite>${update-language-grammar}</overwrite>
+                  </configuration>
+               </execution>
+
+               <!-- *.php lang config -->
+               <execution>
+                  <id>php.tmLanguage</id>
+                  <phase>generate-resources</phase>
+                  <goals>
+                     <goal>wget</goal>
+                  </goals>
+                  <configuration>
+                     <uri>https://raw.githubusercontent.com/textmate/php.tmbundle/master/Syntaxes/PHP.plist</uri>
+                     <outputDirectory>src/main/resources/langcfg</outputDirectory>
+                     <outputFileName>php.tmLanguage</outputFileName>
+                     <skipCache>true</skipCache>
+                     <overwrite>${update-language-grammar}</overwrite>
+                  </configuration>
+               </execution>
+
+               <!-- *.python lang config -->
+               <execution>
+                  <id>python.tmLanguage</id>
+                  <phase>generate-resources</phase>
+                  <goals>
+                     <goal>wget</goal>
+                  </goals>
+                  <configuration>
+                     <uri>https://raw.githubusercontent.com/textmate/python.tmbundle/master/Syntaxes/Python.tmLanguage</uri>
+                     <outputDirectory>src/main/resources/langcfg</outputDirectory>
+                     <outputFileName>python.tmLanguage</outputFileName>
+                     <skipCache>true</skipCache>
+                     <overwrite>${update-language-grammar}</overwrite>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
+      </plugins>
    </build>
 
 </project>

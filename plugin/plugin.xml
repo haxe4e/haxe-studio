@@ -2,6 +2,9 @@
 <?eclipse version="3.4"?>
 <plugin>
 
+   <!-- ===================================== -->
+   <!-- Product                               -->
+   <!-- ===================================== -->
    <extension point="org.eclipse.core.runtime.products" id="product">
       <!-- this is referenced in haxe4e.product as [plugin_id].[product_id], i.e. "org.haxe4e.studio.plugin.product" -->
       <!-- https://www.eclipse.org/articles/Article-Branding/branding-your-application.html -->
@@ -16,6 +19,61 @@
                value="src/main/resources/images/logo/haxe_logo16x16.png,src/main/resources/images/logo/haxe_logo32x32.png,src/main/resources/images/logo/haxe_logo48x48.png,src/main/resources/images/logo/haxe_logo64x64.png,src/main/resources/images/logo/haxe_logo128x128.png,src/main/resources/images/logo/haxe_logo256x256.png">
          </property>
       </product>
+   </extension>
+
+   <!-- ===================================== -->
+   <!-- Content Type                          -->
+   <!-- ===================================== -->
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+      <content-type base-type="org.haxe4e.content.base" priority="high" id="org.haxe4e.content.c++" name="C++ File" file-extensions="c,h,cpp,hpp"  />
+      <content-type base-type="org.haxe4e.content.base" priority="high" id="org.haxe4e.content.cs" name="C# File" file-extensions="cs"/>
+      <content-type base-type="org.haxe4e.content.base" priority="high" id="org.haxe4e.content.ini" name="INI File" file-extensions="ini,conf"/>
+      <content-type base-type="org.haxe4e.content.base" priority="high" id="org.haxe4e.content.java" name="Java File" file-extensions="java"/>
+      <content-type base-type="org.haxe4e.content.base" priority="high" id="org.haxe4e.content.lua" name="Lua File" file-extensions="lua,p8,rockspec"/>
+      <content-type base-type="org.haxe4e.content.base" priority="high" id="org.haxe4e.content.php" name="PHP File" file-extensions="php,phtml"/>
+      <content-type base-type="org.haxe4e.content.base" priority="high" id="org.haxe4e.content.py" name="Python File" file-extensions="py,gp"/>
+
+      <file-association content-type="org.haxe4e.content.c++" file-extensions="c,h,cpp,hpp" />
+      <file-association content-type="org.haxe4e.content.cs" file-extensions="cs" />
+      <file-association content-type="org.haxe4e.content.ini" file-extensions="ini,conf" />
+      <file-association content-type="org.haxe4e.content.java" file-extensions="java" />
+      <file-association content-type="org.haxe4e.content.lua" file-extensions="lua,p8,rockspec" />
+      <file-association content-type="org.haxe4e.content.php" file-extensions="php,phtml" />
+      <file-association content-type="org.haxe4e.content.py" file-extensions="py,gp" />
+   </extension>
+
+   <!-- ===================================== -->
+   <!-- Text Editor                           -->
+   <!-- ===================================== -->
+   <extension point="org.eclipse.ui.editors">
+      <editorContentTypeBinding editorId="org.eclipse.ui.genericeditor.GenericEditor" contentTypeId="org.haxe4e.content.c++" />
+      <editorContentTypeBinding editorId="org.eclipse.ui.genericeditor.GenericEditor" contentTypeId="org.haxe4e.content.cs" />
+      <editorContentTypeBinding editorId="org.eclipse.ui.genericeditor.GenericEditor" contentTypeId="org.haxe4e.content.ini" />
+      <editorContentTypeBinding editorId="org.eclipse.ui.genericeditor.GenericEditor" contentTypeId="org.haxe4e.content.java" />
+      <editorContentTypeBinding editorId="org.eclipse.ui.genericeditor.GenericEditor" contentTypeId="org.haxe4e.content.lua" />
+      <editorContentTypeBinding editorId="org.eclipse.ui.genericeditor.GenericEditor" contentTypeId="org.haxe4e.content.php" />
+      <editorContentTypeBinding editorId="org.eclipse.ui.genericeditor.GenericEditor" contentTypeId="org.haxe4e.content.py" />
+   </extension>
+
+   <!-- ===================================== -->
+   <!-- Syntax Highlighting                   -->
+   <!-- ===================================== -->
+   <extension point="org.eclipse.tm4e.registry.grammars">
+      <!-- https://github.com/eclipse/tm4e/wiki/UI#extension-point -->
+      <grammar path="src/main/resources/langcfg/cpp.tmLanguage" scopeName="source.c++" />
+      <grammar path="src/main/resources/langcfg/cs.tmLanguage" scopeName="source.cs" />
+      <grammar path="src/main/resources/langcfg/ini.tmLanguage" scopeName="source.ini" />
+      <grammar path="src/main/resources/langcfg/java.tmLanguage" scopeName="source.java" />
+      <grammar path="src/main/resources/langcfg/lua.tmLanguage" scopeName="source.lua" />
+      <grammar path="src/main/resources/langcfg/php.tmLanguage" scopeName="text.html.php" />
+      <grammar path="src/main/resources/langcfg/python.tmLanguage" scopeName="source.python" />
+      <scopeNameContentTypeBinding contentTypeId="org.haxe4e.content.c++" scopeName="source.c++" />
+      <scopeNameContentTypeBinding contentTypeId="org.haxe4e.content.cs" scopeName="source.cs" />
+      <scopeNameContentTypeBinding contentTypeId="org.haxe4e.content.ini" scopeName="source.ini" />
+      <scopeNameContentTypeBinding contentTypeId="org.haxe4e.content.java" scopeName="source.java" />
+      <scopeNameContentTypeBinding contentTypeId="org.haxe4e.content.lua" scopeName="source.lua" />
+      <scopeNameContentTypeBinding contentTypeId="org.haxe4e.content.php" scopeName="text.html.php" />
+      <scopeNameContentTypeBinding contentTypeId="org.haxe4e.content.py" scopeName="source.python" />
    </extension>
 
 </plugin>
