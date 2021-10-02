@@ -13,6 +13,8 @@
    </configIni>
 
    <launcherArgs>
+      <programArgs>-perspective org.haxe4e.perspective
+      </programArgs>
       <vmArgs>-Djava.net.preferIPv4Stack=true
 -Dfile.encoding=UTF-8
 -XX:+HeapDumpOnOutOfMemoryError
@@ -23,6 +25,7 @@
    </launcherArgs>
 
    <windowImages i16="src/main/resources/images/logo/haxe_logo16x16.png" i32="src/main/resources/images/logo/haxe_logo32x32.png" i48="src/main/resources/images/logo/haxe_logo48x48.png" i64="src/main/resources/images/logo/haxe_logo64x64.png" i128="src/main/resources/images/logo/haxe_logo128x128.png" i256="src/main/resources/images/logo/haxe_logo256x256.png"/>
+
 
    <launcher name="HaxeStudio">
       <linux icon="product/src/main/resources/images/logo/haxe_logo256x256.xpm"/>
