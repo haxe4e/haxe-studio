@@ -10,6 +10,7 @@ Bundle-ClassPath: .
 Require-Bundle: org.eclipse.core.contenttype,
  org.eclipse.core.runtime,
  org.eclipse.tm4e.registry,
+ org.eclipse.ui,
  org.eclipse.ui.editors,
  org.eclipse.ui.genericeditor,
  org.haxe4e
