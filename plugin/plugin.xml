@@ -16,7 +16,7 @@
          </property>
          <property
                name="windowImages"
-               value="src/main/resources/images/logo/haxe_logo16x16.png,src/main/resources/images/logo/haxe_logo32x32.png,src/main/resources/images/logo/haxe_logo48x48.png,src/main/resources/images/logo/haxe_logo64x64.png,src/main/resources/images/logo/haxe_logo128x128.png,src/main/resources/images/logo/haxe_logo256x256.png">
+               value="src/main/resources/images/logo/haxe4e_logo16x16.png,src/main/resources/images/logo/haxe4e_logo32x32.png,src/main/resources/images/logo/haxe4e_logo48x48.png,src/main/resources/images/logo/haxe4e_logo64x64.png,src/main/resources/images/logo/haxe4e_logo128x128.png,src/main/resources/images/logo/haxe4e_logo256x256.png">
          </property>
       </product>
    </extension>

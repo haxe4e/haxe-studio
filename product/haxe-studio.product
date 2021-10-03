@@ -24,14 +24,15 @@
       </vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="src/main/resources/images/logo/haxe_logo16x16.png" i32="src/main/resources/images/logo/haxe_logo32x32.png" i48="src/main/resources/images/logo/haxe_logo48x48.png" i64="src/main/resources/images/logo/haxe_logo64x64.png" i128="src/main/resources/images/logo/haxe_logo128x128.png" i256="src/main/resources/images/logo/haxe_logo256x256.png"/>
+   <windowImages i16="src/main/resources/images/logo/haxe4e_logo16x16.png" i32="src/main/resources/images/logo/haxe4e_logo32x32.png" i48="src/main/resources/images/logo/haxe4e_logo48x48.png" i64="src/main/resources/images/logo/haxe4e_logo64x64.png" i128="src/main/resources/images/logo/haxe4e_logo128x128.png" i256="src/main/resources/images/logo/haxe4e_logo256x256.png"/>
 
-
+   <splash
+      location="org.haxe4e.studio.plugin" />
    <launcher name="HaxeStudio">
-      <linux icon="product/src/main/resources/images/logo/haxe_logo256x256.xpm"/>
-      <macosx icon="product/src/main/resources/images/logo/haxe_logo256x256.icns"/>
+      <linux icon="product/src/main/resources/images/logo/haxe4e_logo256x256.xpm"/>
+      <macosx icon="product/src/main/resources/images/logo/haxe4e_logo256x256.icns"/>
       <win useIco="true">
-         <ico path="product/src/main/resources/images/logo/haxe_logo.ico"/>
+         <ico path="product/src/main/resources/images/logo/haxe4e_logo.ico"/>
          <bmp/>
       </win>
    </launcher>
