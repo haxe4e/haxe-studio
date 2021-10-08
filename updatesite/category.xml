@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="org.haxe4e.studio.feature">
+      <category name="Haxe Language Support"/>
+   </feature>
+   <category-def name="Haxe Language Support" label="Haxe programming language support for the Eclipse IDE"/>
+</site>

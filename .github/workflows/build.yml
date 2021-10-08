@@ -19,6 +19,10 @@ on:
         required: false
         default: ''
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -82,6 +86,7 @@ jobs:
 
 
     - name: "Delete previous 'latest' release"
+      if: github.ref == 'refs/heads/main'
       run: |
         set -eu
 
@@ -103,6 +108,7 @@ jobs:
 
 
     - name: "Create 'latest' Release"
+      if: github.ref == 'refs/heads/main'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
@@ -115,6 +121,24 @@ jobs:
           --attach "product/target/products/org.haxe4e.studio-macosx.cocoa.x86_64.tar.gz" \
           --attach "product/target/products/org.haxe4e.studio-win32.win32.x86_64.zip" \
           --prerelease
+
+
+    - name: Deploy p2 update site
+      if: github.ref == 'refs/heads/main'
+      run: |
+        set -eux
+
+        cd /tmp
+        git clone https://${{ github.actor }}:${{ github.token }}@github.com/haxe4e/haxe-studio/ --single-branch --branch updatesite updatesite
+        cd updatesite
+        # https://github.community/t/github-actions-bot-email-address/17204
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git reset --hard HEAD^
+        mv $GITHUB_WORKSPACE/updatesite/target/repository/* .
+        git add --all
+        git commit -am "deploy p2 update site"
+        git push origin updatesite --force
 
 
     - name: "Delete intermediate build artifacts"
