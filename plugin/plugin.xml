@@ -26,14 +26,14 @@
    <!-- ===================================== -->
    <extension point="org.eclipse.ui.bindings">
       <key
-         commandId="org.eclipse.ui.navigate.previousTab"
+         commandId="org.eclipse.ui.navigate.previousEditor"
          contextId="org.eclipse.ui.contexts.dialogAndWindow"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="M1+SHIFT+TAB">
          <!-- navigate to previous tab using CTRL+SHIFT+TAB -->
       </key>
       <key
-         commandId="org.eclipse.ui.navigate.nextTab"
+         commandId="org.eclipse.ui.navigate.nextEditor"
          contextId="org.eclipse.ui.contexts.dialogAndWindow"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="M1+TAB">
