@@ -344,18 +344,19 @@ version(s), and exceptions or additional permissions here}.&quot;
       <feature id="org.eclipse.ecf.core.ssl.feature"/>
       <feature id="org.eclipse.ecf.filetransfer.ssl.feature"/>
       <feature id="org.eclipse.e4.rcp"/>
-      <feature id="org.eclipse.egit"/>
-      <feature id="org.eclipse.egit.gitflow.feature"/>
-      <feature id="org.eclipse.jgit"/>
-      <feature id="org.eclipse.mylyn.wikitext.editors_feature"/>
-      <feature id="org.haxe4e.studio.feature" installMode="root"/>
-      <feature id="org.haxe4e.feature" installMode="root"/>
+      <feature id="org.eclipse.egit" installMode="root"/>
+      <feature id="org.eclipse.egit.gitflow.feature" installMode="root"/>
+      <feature id="org.eclipse.jgit" installMode="root"/>
+      <feature id="org.eclipse.mylyn.wikitext.editors_feature" installMode="root"/>
       <feature id="org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped" installMode="root"/>
+      <feature id="org.eclipse.shellwax.feature" installMode="root"/>
+      <feature id="org.eclipse.tm.terminal.feature" installMode="root"/>
       <feature id="org.eclipse.wildwebdeveloper.feature" installMode="root"/>
       <feature id="org.eclipse.wildwebdeveloper.xml.feature" installMode="root"/>
+      <feature id="org.haxe4e.studio.feature" installMode="root"/>
+      <feature id="org.haxe4e.feature" installMode="root"/>
       <feature id="de.jcup.batcheditor" installMode="root"/>
       <feature id="de.anbos.eclipse.easyshell.feature" installMode="root"/>
-      <feature id="org.eclipse.shellwax.feature" installMode="root"/>
    </features>
 
    <configurations>
@@ -367,6 +368,7 @@ version(s), and exceptions or additional permissions here}.&quot;
    </configurations>
 
    <repositories>
+      <repository location="https://raw.githubusercontent.com/haxe4e/haxe-studio/updatesite/" enabled="true" />
       <repository location="https://raw.githubusercontent.com/haxe4e/haxe4e/updatesite/" enabled="true" />
    </repositories>
 
