@@ -135,7 +135,7 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git reset --hard HEAD^
-        mv $GITHUB_WORKSPACE/updatesite/target/repository/* .
+        mv $GITHUB_WORKSPACE/product/target/repository/* .
         git add --all
         git commit -am "deploy p2 update site"
         git push origin updatesite --force

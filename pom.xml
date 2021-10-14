@@ -60,7 +60,6 @@
    <modules>
       <module>plugin</module>
       <module>feature</module>
-      <module>updatesite</module>
       <module>product</module>
    </modules>
 
