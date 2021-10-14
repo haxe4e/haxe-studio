@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
-
 <product name="Haxe Studio" uid="org.haxe4e.studio" id="org.haxe4e.studio.plugin.product" application="org.eclipse.ui.ide.workbench" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
-      <text>
-         HaxeStudio - Eclipse based Haxe IDE
-      </text>
+      <text>HaxeStudio - Eclipse based Haxe IDE</text>
    </aboutInfo>
 
-   <configIni use="default">
-   </configIni>
+   <configIni use="default" />
 
    <launcherArgs>
-      <programArgs>-perspective org.haxe4e.perspective
-      </programArgs>
+      <programArgs>-perspective org.haxe4e.perspective</programArgs>
       <vmArgs>-Djava.net.preferIPv4Stack=true
 -Dfile.encoding=UTF-8
 -XX:+HeapDumpOnOutOfMemoryError
 -Xverify:none
       </vmArgs>
-      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
-      </vmArgsMac>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
    <windowImages i16="src/main/resources/images/logo/haxe4e_logo16x16.png" i32="src/main/resources/images/logo/haxe4e_logo32x32.png" i48="src/main/resources/images/logo/haxe4e_logo48x48.png" i64="src/main/resources/images/logo/haxe4e_logo64x64.png" i128="src/main/resources/images/logo/haxe4e_logo128x128.png" i256="src/main/resources/images/logo/haxe4e_logo256x256.png"/>
 
-   <splash
-      location="org.haxe4e.studio.plugin" />
+   <splash location="org.haxe4e.studio.plugin" />
+
    <launcher name="HaxeStudio">
       <linux icon="product/src/main/resources/images/logo/haxe4e_logo256x256.xpm"/>
       <macosx icon="product/src/main/resources/images/logo/haxe4e_logo.icns"/>
@@ -37,12 +31,11 @@
       </win>
    </launcher>
 
-   <vm>
-   </vm>
+   <vm />
 
    <license>
-        <url>https://github.com/haxe4e/haxe4e/blob/main/LICENSE.txt</url>
-        <text>
+      <url>https://github.com/haxe4e/haxe-studio/blob/main/LICENSE.txt</url>
+      <text>
    Eclipse Public License - v 2.0
 
     THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE
@@ -320,7 +313,7 @@ version(s), and exceptions or additional permissions here}.&quot;
   look for such a notice.
 
   You may add additional accurate notices of copyright ownership.
-         </text>
+      </text>
    </license>
 
    <plugins>
@@ -377,7 +370,6 @@ version(s), and exceptions or additional permissions here}.&quot;
       <targetfile overwrite="false"/>
    </preferencesInfo>
 
-   <cssInfo>
-   </cssInfo>
+   <cssInfo />
 
 </product>
