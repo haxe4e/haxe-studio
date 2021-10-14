@@ -22,6 +22,7 @@ programming language.
 
 It has the following plugins pre-installed:
 - [haxe4e](https://github.com/haxe4e/haxe4e) - Haxe programming language support for the Eclipse IDE
+- [Ansi Console](https://github.com/mihnita/ansi-econsole) - support ANSI escape sequences for coloring output in the Eclipse console
 - [Batch Editor](https://github.com/de-jcup/eclipse-batch-editor) - Windows Batch File Editor
 - [EGit](https://www.eclipse.org/egit/) - Git support
 - [Easy Shell](https://anb0s.github.io/EasyShell/) - opens shell windows or file managers from the popup menu in the navigation tree
