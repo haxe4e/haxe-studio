@@ -12,11 +12,15 @@
          <property name="appName" value="Haxe Studio"/>
          <property
                name="aboutText"
-               value="HaxeStudio - Eclipse based Haxe IDE">
+               value="Haxe Studio - Eclipse based Haxe IDE&#x0D;&#x0A;https://github.com/haxe4e/haxe-studio&#x0D;&#x0A;&#x0D;&#x0A;Copyright 2021 by the Haxe4E authors. All rights reserved. Eclipse and the Eclipse logo are trademarks of the Eclipse Foundation, Inc., https://www.eclipse.org/. Oracle and Java are trademarks or registered trademarks of Oracle and/or its affiliates. Other names may be trademarks of their respective owners.&#x0D;&#x0A;&#x0D;&#x0A;This product includes software developed by other open source projects including the Eclipse Foundation, Inc., https://www.eclipse.org/ and Apache Software Foundation, https://www.apache.org/.">
          </property>
          <property
                name="windowImages"
                value="src/main/resources/images/logo/haxe4e_logo16x16.png,src/main/resources/images/logo/haxe4e_logo32x32.png,src/main/resources/images/logo/haxe4e_logo48x48.png,src/main/resources/images/logo/haxe4e_logo64x64.png,src/main/resources/images/logo/haxe4e_logo128x128.png,src/main/resources/images/logo/haxe4e_logo256x256.png">
+         </property>
+         <property
+               name="aboutImage"
+               value="src/main/resources/images/logo/haxe4e_logo64x64.png">
          </property>
       </product>
    </extension>

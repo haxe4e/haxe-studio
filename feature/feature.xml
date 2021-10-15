@@ -14,7 +14,7 @@
       license-feature="org.eclipse.license"
       license-feature-version="2.0.2.qualifier">
 
-   <description>
+   <description url="https://github.com/haxe4e/haxe-studio/">
       %description
    </description>
 
@@ -25,6 +25,10 @@
    <license url="%licenseURL">
       %license
    </license>
+
+   <url>
+      <update label="Haxe4E Latest" url="https://raw.githubusercontent.com/haxe4e/haxe-studio/updatesite/"/>
+   </url>
 
    <plugin
          id="org.haxe4e.studio.plugin"
