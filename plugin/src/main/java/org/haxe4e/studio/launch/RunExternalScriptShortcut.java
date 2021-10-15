@@ -1,0 +1,81 @@
+/*
+ * Copyright 2021 by the Haxe4E authors.
+ * SPDX-License-Identifier: EPL-2.0
+ */
+package org.haxe4e.studio.launch;
+
+import org.eclipse.core.externaltools.internal.IExternalToolConstants;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.debug.core.DebugPlugin;
+import org.eclipse.debug.core.ILaunchConfiguration;
+import org.eclipse.debug.ui.DebugUITools;
+import org.eclipse.debug.ui.ILaunchShortcut;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.window.Window;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.part.FileEditorInput;
+import org.haxe4e.util.StatusUtils;
+import org.haxe4e.util.ui.Dialogs;
+import org.haxe4e.util.ui.UI;
+
+/**
+ * @author Sebastian Thomschke
+ */
+@SuppressWarnings("restriction")
+public class RunExternalScriptShortcut implements ILaunchShortcut {
+
+   @Override
+   public void launch(final IEditorPart editor, final String mode) {
+      final var editorInput = editor.getEditorInput();
+      if (editorInput instanceof FileEditorInput) {
+         final var fileInput = (FileEditorInput) editorInput;
+         launchExternalTool(fileInput.getFile(), mode);
+      }
+   }
+
+   @Override
+   public void launch(final ISelection selection, final String mode) {
+      if (selection instanceof IStructuredSelection) {
+         final var firstElement = ((IStructuredSelection) selection).getFirstElement();
+         if (firstElement instanceof IFile) {
+            final var file = (IFile) firstElement;
+            launchExternalTool(file, mode);
+         }
+      }
+   }
+
+   private void launchExternalTool(final IFile scriptFile, final String mode) {
+      final var launchMgr = DebugPlugin.getDefault().getLaunchManager();
+      final var launchConfigType = launchMgr.getLaunchConfigurationType(IExternalToolConstants.ID_PROGRAM_LAUNCH_CONFIGURATION_TYPE);
+
+      final var project = scriptFile.getProject();
+      final var location = "${workspace_loc:/" + project.getName() + "/" + scriptFile.getProjectRelativePath() + "}";
+      final var workDir = "${workspace_loc:/" + project.getName() + "}";
+      try {
+         // use an existing launch config if available
+         for (final ILaunchConfiguration cfg : launchMgr.getLaunchConfigurations(launchConfigType)) {
+            if (cfg.getAttribute(IExternalToolConstants.ATTR_LOCATION, "").equals(location) //
+               && cfg.getAttribute(IExternalToolConstants.ATTR_WORKING_DIRECTORY, "").equals(workDir) //
+            ) {
+               DebugUITools.launch(cfg, mode);
+               return;
+            }
+         }
+
+         // create a new launch config
+         final var newLaunchConfig = launchConfigType.newInstance(null, launchMgr.generateLaunchConfigurationName(project.getName() + " ("
+            + scriptFile.getName() + ")"));
+         newLaunchConfig.setAttribute(IExternalToolConstants.ATTR_LOCATION, location);
+         newLaunchConfig.setAttribute(IExternalToolConstants.ATTR_WORKING_DIRECTORY, workDir);
+
+         if (Window.OK == DebugUITools.openLaunchConfigurationDialog(UI.getShell(), newLaunchConfig,
+            org.eclipse.ui.externaltools.internal.model.IExternalToolConstants.ID_EXTERNAL_TOOLS_LAUNCH_GROUP, null)) {
+            newLaunchConfig.doSave();
+         }
+      } catch (final CoreException ex) {
+         Dialogs.showStatus("Failed to create Launch configuration", StatusUtils.createError(ex), true);
+      }
+   }
+}

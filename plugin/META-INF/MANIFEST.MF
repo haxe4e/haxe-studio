@@ -8,9 +8,15 @@ Automatic-Module-Name: org.haxe4e.studio.plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ClassPath: .
 Require-Bundle: org.eclipse.core.contenttype,
+ org.eclipse.core.externaltools,
  org.eclipse.core.runtime,
+ org.eclipse.debug.core,
+ org.eclipse.debug.ui,
  org.eclipse.tm4e.registry,
  org.eclipse.ui,
  org.eclipse.ui.editors,
+ org.eclipse.ui.externaltools,
+ org.eclipse.ui.ide,
+ org.eclipse.ui.ide.application,
  org.eclipse.ui.genericeditor,
  org.haxe4e

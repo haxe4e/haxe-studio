@@ -100,4 +100,33 @@
       <scopeNameContentTypeBinding contentTypeId="org.haxe4e.content.py" scopeName="source.python" />
    </extension>
 
+   <!-- ===================================== -->
+   <!-- Launch Configuration                  -->
+   <!-- ===================================== -->
+   <extension point="org.eclipse.debug.ui.launchShortcuts">
+      <shortcut
+         id="org.haxe4e.studio.launch.shortcut.external_file"
+         class="org.haxe4e.studio.launch.RunExternalScriptShortcut"
+         label="External Program"
+         icon="platform:/plugin/org.eclipse.ui.externaltools/icons/full/obj16/external_tools.png"
+         modes="run">
+         <contextualLaunch>
+            <enablement>
+               <with variable="selection">
+                  <count value="1" />
+                  <iterate>
+                     <and>
+                        <adapt type="org.eclipse.core.resources.IFile" />
+                        <or>
+                           <test property="org.eclipse.debug.ui.matchesPattern" value="**.bat" />
+                           <test property="org.eclipse.debug.ui.matchesPattern" value="**.cmd" />
+                           <test property="org.eclipse.debug.ui.matchesPattern" value="**.sh" />
+                        </or>
+                     </and>
+                  </iterate>
+               </with>
+            </enablement>
+         </contextualLaunch>
+      </shortcut>
+   </extension>
 </plugin>
