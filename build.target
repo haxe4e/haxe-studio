@@ -77,7 +77,7 @@
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <!-- EasyShell Plugin https://github.com/mihnita/ansi-econsole -->
+            <!-- Ansi Console Plugin https://github.com/mihnita/ansi-econsole -->
             <repository location="https://www.mihai-nita.net/eclipse"/>
             <unit id="net.mihai-nita.ansicon.feature.group" version="0.0.0"/>
         </location>
