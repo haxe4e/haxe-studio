@@ -67,6 +67,13 @@
       <pluginManagement>
          <plugins>
             <plugin>
+               <artifactId>maven-deploy-plugin</artifactId>
+               <configuration>
+                  <skip>true</skip>
+               </configuration>
+            </plugin>
+
+            <plugin>
                <!-- https://www.eclipse.org/tycho/sitedocs/tycho-compiler-plugin/plugin-info.html -->
                <groupId>org.eclipse.tycho</groupId>
                <artifactId>tycho-compiler-plugin</artifactId>
