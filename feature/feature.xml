@@ -30,8 +30,61 @@
       <update label="Haxe4E Latest" url="https://raw.githubusercontent.com/haxe4e/haxe-studio/updatesite/"/>
    </url>
 
+   <requires>
+      <import plugin="org.eclipse.core.contenttype"/>
+      <import plugin="org.eclipse.core.externaltools"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.debug.core"/>
+      <import plugin="org.eclipse.debug.ui"/>
+      <import plugin="org.eclipse.tm4e.registry"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.ui.externaltools"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.ide.application"/>
+      <import plugin="org.eclipse.ui.genericeditor"/>
+      <import plugin="org.haxe4e"/>
+      <import plugin="de.sebthom.eclipse.commons"/>
+      <import plugin="net.sf.jstuff.core" version="5.18.0" match="greaterOrEqual"/>
+   </requires>
+
    <plugin
          id="org.haxe4e.studio.plugin"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.haxe4e"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.sebthom.eclipse.commons"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.jstuff.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.commons.lang3"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.commons.commons-io"
          download-size="0"
          install-size="0"
          version="0.0.0"

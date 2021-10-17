@@ -16,9 +16,10 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.window.Window;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.part.FileEditorInput;
-import org.haxe4e.util.StatusUtils;
-import org.haxe4e.util.ui.Dialogs;
-import org.haxe4e.util.ui.UI;
+import org.haxe4e.studio.HaxeStudioPlugin;
+
+import de.sebthom.eclipse.commons.ui.Dialogs;
+import de.sebthom.eclipse.commons.ui.UI;
 
 /**
  * @author Sebastian Thomschke
@@ -75,7 +76,7 @@ public class RunExternalScriptShortcut implements ILaunchShortcut {
             newLaunchConfig.doSave();
          }
       } catch (final CoreException ex) {
-         Dialogs.showStatus("Failed to create Launch configuration", StatusUtils.createError(ex), true);
+         Dialogs.showStatus("Failed to create Launch configuration", HaxeStudioPlugin.status().createError(ex), true);
       }
    }
 }

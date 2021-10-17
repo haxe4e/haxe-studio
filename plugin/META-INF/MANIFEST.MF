@@ -19,4 +19,7 @@ Require-Bundle: org.eclipse.core.contenttype,
  org.eclipse.ui.ide,
  org.eclipse.ui.ide.application,
  org.eclipse.ui.genericeditor,
- org.haxe4e
+ org.haxe4e,
+ de.sebthom.eclipse.commons,
+ net.sf.jstuff.core;bundle-version="5.18.0"
+Bundle-Activator: org.haxe4e.studio.HaxeStudioPlugin
