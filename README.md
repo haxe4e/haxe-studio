@@ -26,7 +26,7 @@ It has the following plugins pre-installed:
 - [Batch Editor](https://github.com/de-jcup/eclipse-batch-editor) - Windows Batch File Editor
 - [EGit](https://www.eclipse.org/egit/) - Git support
 - [Easy Shell](https://anb0s.github.io/EasyShell/) - opens shell windows or file managers from the popup menu in the navigation tree
-- [Find/Replace View](https://github.com/sebthom/eclipse-findview/) - Convenient view to find/replace within the active editor
+- [Find/Replace View](https://github.com/sebthom/findview-eclipse-plugin) - Convenient view to find/replace within the active editor
 - [ShellWax](https://github.com/eclipse/shellwax) - Bash File Editor
 - [Wild Web Developer](https://github.com/eclipse/wildwebdeveloper) - Web Development Tools
 
