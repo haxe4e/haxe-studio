@@ -27,6 +27,7 @@ It has the following plugins pre-installed:
 - [EGit](https://www.eclipse.org/egit/) - Git support
 - [Easy Shell](https://anb0s.github.io/EasyShell/) - opens shell windows or file managers from the popup menu in the navigation tree
 - [Find/Replace View](https://github.com/sebthom/findview-eclipse-plugin) - Convenient view to find/replace within the active editor
+- [Indent Guide](https://github.com/grosenberg/IndentGuide) - Adds 'Indent Guide' (vertical line on indentation columns) to text editor
 - [Open with Eclipse](https://github.com/sebthom/open-with-eclipse-plugin) - Windows File explorer context menu integration
 - [ShellWax](https://github.com/eclipse/shellwax) - Bash File Editor
 - [Wild Web Developer](https://github.com/eclipse/wildwebdeveloper) - Web Development Tools
