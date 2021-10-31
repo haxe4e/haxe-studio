@@ -87,5 +87,11 @@
             <repository location="https://raw.githubusercontent.com/sebthom/findview-eclipse-plugin/updatesite"/>
             <unit id="de.sebthom.eclipse.findview.feature.feature.group" version="0.0.0"/>
         </location>
+
+        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+            <!-- Open with Eclipse https://github.com/sebthom/open-with-eclipse-plugin -->
+            <repository location="https://raw.githubusercontent.com/sebthom/open-with-eclipse-plugin/updatesite"/>
+            <unit id="de.sebthom.eclipse.open-with-eclipse.feature.feature.group" version="0.0.0"/>
+        </location>
     </locations>
 </target>
