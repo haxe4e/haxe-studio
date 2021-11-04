@@ -24,6 +24,11 @@
          </property>
       </product>
    </extension>
+   <extension point="org.eclipse.core.runtime.applications" id="org.haxe4e.studio.application">
+      <application>
+         <run class="org.haxe4e.studio.HaxeStudioApplication"/>
+      </application>
+   </extension>
 
    <!-- ===================================== -->
    <!-- Key Bindings                          -->

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Haxe Studio" uid="org.haxe4e.studio" id="org.haxe4e.studio.plugin.product" application="org.eclipse.ui.ide.workbench" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Haxe Studio" uid="org.haxe4e.studio" id="org.haxe4e.studio.plugin.product" application="org.haxe4e.studio.application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="src/main/resources/images/logo/haxe4e_logo64x64.png"/>
