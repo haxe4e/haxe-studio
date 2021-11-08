@@ -27,7 +27,7 @@ defaults:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - name: Git Checkout
       uses: actions/checkout@v2 #https://github.com/actions/checkout
@@ -78,6 +78,14 @@ jobs:
           ${{ github.event.inputs.additional_maven_args }} \
           clean verify
 
+        mv product/target/products/org.haxe4e.studio-win32.win32.x86_64.zip \
+           product/target/products/org.haxe4e.studio-win.x86_64.zip
+
+
+    - name: Generate PortableApps archive
+      run: |
+        bash product/build-paf.sh
+
 
     - name: "Delete previous 'latest' release"
       if: github.ref == 'refs/heads/main'
@@ -113,7 +121,8 @@ jobs:
           --message "latest" \
           --attach "product/target/products/org.haxe4e.studio-linux.gtk.x86_64.tar.gz" \
           --attach "product/target/products/org.haxe4e.studio-macosx.cocoa.x86_64.tar.gz" \
-          --attach "product/target/products/org.haxe4e.studio-win32.win32.x86_64.zip" \
+          --attach "product/target/products/org.haxe4e.studio-win.x86_64.zip" \
+          --attach "product/target/HaxeStudioPortable.paf.exe" \
           --prerelease
 
 
@@ -129,7 +138,7 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git reset --hard HEAD^
-        mv $GITHUB_WORKSPACE/product/target/repository/* .
+        mv $(cygpath $GITHUB_WORKSPACE)/product/target/repository/* .
         git add --all
         git commit -am "deploy p2 update site"
         git push origin updatesite --force
@@ -141,3 +150,5 @@ jobs:
         name: "*"
         useGlob: true
         failOnError: false
+
+

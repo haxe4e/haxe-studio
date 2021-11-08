@@ -38,10 +38,10 @@ This product includes software developed by other open source projects including
    <splash
       location="org.haxe4e.studio.plugin" />
    <launcher name="HaxeStudio">
-      <linux icon="product/src/main/resources/images/logo/haxe4e_logo256x256.xpm"/>
-      <macosx icon="product/src/main/resources/images/logo/haxe4e_logo.icns"/>
+      <linux icon="product/src/icons/haxe4e_logo256x256.xpm"/>
+      <macosx icon="product/src/icons/logo/haxe4e_logo.icns"/>
       <win useIco="true">
-         <ico path="product/src/main/resources/images/logo/haxe4e_logo.ico"/>
+         <ico path="product/src/icons/haxe4e_logo.ico"/>
          <bmp/>
       </win>
    </launcher>
