@@ -60,7 +60,21 @@
          contextId="org.eclipse.ui.contexts.dialogAndWindow"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="M3+F11">
-        <!-- run last debug Alt+F11 -->
+        <!-- run last debug using Alt+F11 -->
+      </key>
+      <key
+         commandId="org.eclipse.ui.edit.text.zoomIn"
+         contextId="org.eclipse.ui.textEditorScope"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="CTRL++ CTRL+NUMPAD_ADD">
+        <!-- zoom in using CTRL++ -->
+      </key>
+      <key
+         commandId="org.eclipse.ui.edit.text.zoomOut"
+         contextId="org.eclipse.ui.textEditorScope"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="CTRL+- CTRL+NUMPAD_SUBTRACT">
+        <!-- zoom out using CTRL++ -->
       </key>
    </extension>
 
