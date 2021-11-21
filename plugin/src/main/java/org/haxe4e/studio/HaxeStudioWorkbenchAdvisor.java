@@ -92,6 +92,9 @@ public class HaxeStudioWorkbenchAdvisor extends IDEWorkbenchAdvisor {
       egitUiPrefs.setDefault("decorator_show_dirty_icon", true);
       egitUiPrefs.setDefault("show_push_success_dialog", false);
 
+      final var easyShellPrefs = new ScopedPreferenceStore(ConfigurationScope.INSTANCE, "de.anbos.eclipse.easyshell.plugin");
+      easyShellPrefs.setDefault("v2_2_001/MIGRATED", true);
+
       final var intentGuidePrefs = new ScopedPreferenceStore(ConfigurationScope.INSTANCE, "net.certiv.tools.indentguide");
       intentGuidePrefs.setDefault("indentguide.enabled", true);
       intentGuidePrefs.setDefault("indentguide.line_style", 3);
