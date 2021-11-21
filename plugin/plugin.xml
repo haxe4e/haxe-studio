@@ -48,6 +48,20 @@
          sequence="M1+TAB">
          <!-- navigate to next editor using CTRL+TAB -->
       </key>
+      <key
+         commandId="org.eclipse.ui.window.fullscreenmode"
+         contextId="org.eclipse.ui.contexts.dialogAndWindow"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F11">
+        <!-- toggle fullscreen using F11 -->
+      </key>
+      <key
+         commandId="org.eclipse.debug.ui.commands.DebugLast"
+         contextId="org.eclipse.ui.contexts.dialogAndWindow"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="M3+F11">
+        <!-- run last debug Alt+F11 -->
+      </key>
    </extension>
 
    <!-- ===================================== -->
