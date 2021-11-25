@@ -25,14 +25,14 @@ import de.sebthom.eclipse.commons.ui.UI;
  * @author Sebastian Thomschke
  */
 @SuppressWarnings("restriction")
-public class RunExternalScriptShortcut implements ILaunchShortcut {
+public class RunExternalProgramShortcut implements ILaunchShortcut {
 
    @Override
    public void launch(final IEditorPart editor, final String mode) {
       final var editorInput = editor.getEditorInput();
       if (editorInput instanceof FileEditorInput) {
          final var fileInput = (FileEditorInput) editorInput;
-         launchExternalTool(fileInput.getFile(), mode);
+         launchExternalProgram(fileInput.getFile(), mode);
       }
    }
 
@@ -42,17 +42,17 @@ public class RunExternalScriptShortcut implements ILaunchShortcut {
          final var firstElement = ((IStructuredSelection) selection).getFirstElement();
          if (firstElement instanceof IFile) {
             final var file = (IFile) firstElement;
-            launchExternalTool(file, mode);
+            launchExternalProgram(file, mode);
          }
       }
    }
 
-   private void launchExternalTool(final IFile scriptFile, final String mode) {
+   private void launchExternalProgram(final IFile programFile, final String mode) {
       final var launchMgr = DebugPlugin.getDefault().getLaunchManager();
       final var launchConfigType = launchMgr.getLaunchConfigurationType(IExternalToolConstants.ID_PROGRAM_LAUNCH_CONFIGURATION_TYPE);
 
-      final var project = scriptFile.getProject();
-      final var location = "${workspace_loc:/" + project.getName() + "/" + scriptFile.getProjectRelativePath() + "}";
+      final var project = programFile.getProject();
+      final var location = "${workspace_loc:/" + project.getName() + "/" + programFile.getProjectRelativePath() + "}";
       final var workDir = "${workspace_loc:/" + project.getName() + "}";
       try {
          // use an existing launch config if available
@@ -67,7 +67,7 @@ public class RunExternalScriptShortcut implements ILaunchShortcut {
 
          // create a new launch config
          final var newLaunchConfig = launchConfigType.newInstance(null, launchMgr.generateLaunchConfigurationName(project.getName() + " ("
-            + scriptFile.getName() + ")"));
+            + programFile.getName() + ")"));
          newLaunchConfig.setAttribute(IExternalToolConstants.ATTR_LOCATION, location);
          newLaunchConfig.setAttribute(IExternalToolConstants.ATTR_WORKING_DIRECTORY, workDir);
 

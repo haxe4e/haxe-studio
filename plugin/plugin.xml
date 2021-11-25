@@ -139,7 +139,7 @@
    <extension point="org.eclipse.debug.ui.launchShortcuts">
       <shortcut
          id="org.haxe4e.studio.launch.shortcut.external_file"
-         class="org.haxe4e.studio.launch.RunExternalScriptShortcut"
+         class="org.haxe4e.studio.launch.RunExternalProgramShortcut"
          label="External Program"
          icon="platform:/plugin/org.eclipse.ui.externaltools/icons/full/obj16/external_tools.png"
          modes="run">
@@ -151,9 +151,24 @@
                      <and>
                         <adapt type="org.eclipse.core.resources.IFile" />
                         <or>
-                           <test property="org.eclipse.debug.ui.matchesPattern" value="**.bat" />
-                           <test property="org.eclipse.debug.ui.matchesPattern" value="**.cmd" />
-                           <test property="org.eclipse.debug.ui.matchesPattern" value="**.sh" />
+                           <and>
+                              <!-- https://stackoverflow.com/questions/36906962/menu-item-shown-hidden-depending-on-os-name-in-plugin-xml -->
+                              <systemTest property="osgi.os" value="win32" />
+                              <or>
+                                 <test property="org.eclipse.debug.ui.matchesPattern" value="**.bat" />
+                                 <test property="org.eclipse.debug.ui.matchesPattern" value="**.cmd" />
+                                 <test property="org.eclipse.debug.ui.matchesPattern" value="**.exe" />
+                              </or>
+                           </and>
+                           <and>
+                              <or>
+                                 <systemTest property="osgi.os" value="linux" />
+                                 <systemTest property="osgi.os" value="macos" />
+                              </or>
+                              <or>
+                                 <test property="org.eclipse.debug.ui.matchesPattern" value="**.sh" />
+                              </or>
+                           </and>
                         </or>
                      </and>
                   </iterate>
