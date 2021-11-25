@@ -54,6 +54,9 @@ public class HaxeStudioWorkbenchAdvisor extends IDEWorkbenchAdvisor {
       uiEditorsPrefs.setDefault("printMarginColumn", 120);
       uiEditorsPrefs.setDefault("spacesForTabs", false);
 
+      uiEditorsPrefs.setDefault("quickdiff.characterMode", true);
+      uiEditorsPrefs.setDefault("quickdiff.defaultProvider", "org.eclipse.egit.ui.internal.decorators.GitQuickDiffProvider");
+
       uiEditorsPrefs.setDefault("showWhitespaceCharacters", true);
       uiEditorsPrefs.setDefault("showLeadingIdeographicSpaces", false);
       uiEditorsPrefs.setDefault("showLeadingSpaces", false);
