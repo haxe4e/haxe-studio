@@ -67,7 +67,7 @@
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
             <!-- Windows Batch File Editor -->
             <repository location="https://de-jcup.github.io/update-site-eclipse-batch-editor/update-site/"/>
-            <unit id="de.jcup.batcheditor.feature.group" version="1.2.0"/>
+            <unit id="de.jcup.batcheditor.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
