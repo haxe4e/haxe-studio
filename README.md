@@ -42,6 +42,17 @@ TODO
 
 TODO
 
+### Common Key Bindings
+
+|Action                              | Eclipse             | Haxe Studio          | vscode
+|------------------------------------|---------------------|----------------------|-------------------
+|Open Find Actions (Command Palette) | `CTRL`+`3`          | `CTRL`+`3`           | `F1` / `CTRL`+`SHIFT`+`P`
+|Open Quick Outline                  | `CTRL`+`O`          | `CTRL`+`O`           | n/a
+|Full Screen Toggle                  | `ALT`+`F11`         | `F11`                | `F11`
+|Format Source Code                  | `CTRL`+`SHIFT`+`F`  | `CTRL`+`SHIFT`+`F`   | `ALT`+`SHIFT`+`F`
+|Go to Method/Type Declaration       | `F3`                | `F3`                 | `F12`
+|Zoom In/Out                         | `CTRL`+`+/-`        | `CTRL`+`+/-`         | `CTRL`+`+/-`
+
 
 ## <a id="building"></a>Building from Sources
 
