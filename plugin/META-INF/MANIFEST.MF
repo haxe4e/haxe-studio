@@ -5,6 +5,7 @@ Bundle-SymbolicName: org.haxe4e.studio.plugin;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: The Haxe4E Project
 Automatic-Module-Name: org.haxe4e.studio.plugin
+Bundle-Activator: org.haxe4e.studio.HaxeStudioPlugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ClassPath: .
 Require-Bundle: org.eclipse.core.contenttype,
@@ -20,5 +21,4 @@ Require-Bundle: org.eclipse.core.contenttype,
  org.eclipse.ui.ide.application,
  org.eclipse.ui.genericeditor,
  de.sebthom.eclipse.commons,
- net.sf.jstuff.core;bundle-version="5.18.0"
-Bundle-Activator: org.haxe4e.studio.HaxeStudioPlugin
+ net.sf.jstuff.core;bundle-version="5.19.0"
