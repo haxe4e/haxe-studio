@@ -33,14 +33,9 @@
    <requires>
       <import plugin="org.eclipse.core.contenttype"/>
       <import plugin="org.eclipse.core.externaltools"/>
-      <import plugin="org.eclipse.core.filebuffers"/>
-      <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.debug.core"/>
       <import plugin="org.eclipse.debug.ui"/>
-      <import plugin="org.eclipse.jface"/>
-      <import plugin="org.eclipse.jface.text"/>
-      <import plugin="org.eclipse.osgi"/>
       <import plugin="org.eclipse.tm4e.registry"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.ui.editors"/>
@@ -48,9 +43,14 @@
       <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.ui.ide.application"/>
       <import plugin="org.eclipse.ui.genericeditor"/>
+      <import plugin="net.sf.jstuff.core" version="5.21.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.platform" version="4.17.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.filebuffers"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.osgi"/>
       <import plugin="org.eclipse.ui.workbench.texteditor"/>
-      <import plugin="de.sebthom.eclipse.commons"/>
-      <import plugin="net.sf.jstuff.core" version="5.18.0" match="greaterOrEqual"/>
       <import plugin="org.apache.commons.commons-io" version="2.11.0" match="greaterOrEqual"/>
       <import plugin="org.apache.commons.lang3" version="3.12.0" match="greaterOrEqual"/>
    </requires>
