@@ -9,7 +9,7 @@
 
 1. [About](#about)
 1. [What is it?](#what-is-it)
-1. [Installation](#installation)
+1. [Download](#download)
 1. [Usage](#usage)
 1. [Building from Sources](#building)
 1. [Version History](#version-history)
@@ -30,17 +30,25 @@ It has the following plugins pre-installed:
 - [Indent Guide](https://github.com/grosenberg/IndentGuide) - Adds 'Indent Guide' (vertical line on indentation columns) to text editor
 - [Open with Eclipse](https://github.com/sebthom/open-with-eclipse-plugin) - Windows File explorer context menu integration
 - [ShellWax](https://github.com/eclipse/shellwax) - Bash File Editor
-- [Wild Web Developer](https://github.com/eclipse/wildwebdeveloper) - Web Development Tools
+- [Wild Web Developer](https://github.com/eclipse/wildwebdeveloper) - Web Development Tools (CSS, HTML, JavaScript, TypeScript, XML support)
 
+![](product/src/haxe_studio_splash.png)
 
-## <a name="installation"></a>Installation
+![](product/src/haxe_studio_screenshot.png)
 
-TODO
+## <a name="download"></a>Download
+
+You can download the latest platform-specific releases from here:
+
+- Linux: https://github.com/haxe4e/haxe-studio/releases/download/latest/org.haxe4e.studio-linux.gtk.x86_64.tar.gz
+- MacOS: https://github.com/haxe4e/haxe-studio/releases/download/latest/org.haxe4e.studio-macosx.cocoa.x86_64.tar.gz
+- Windows: https://github.com/haxe4e/haxe-studio/releases/download/latest/org.haxe4e.studio-win.x86_64.zip
+- Windows Portable App: https://github.com/haxe4e/haxe-studio/releases/download/latest/HaxeStudioPortable.paf.exe
 
 
 ## <a name="usage"></a>Usage
 
-TODO
+Please check the [Wiki](https://github.com/haxe4e/haxe-studio/wiki)
 
 ### Common Key Bindings
 
