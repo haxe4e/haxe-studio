@@ -347,19 +347,28 @@ version(s), and exceptions or additional permissions here}.&quot;
       <feature id="org.eclipse.emf.common"/>
       <feature id="org.eclipse.equinox.p2.core.feature"/>
       <feature id="org.eclipse.ecf.core.feature"/>
-      <feature id="org.eclipse.ecf.filetransfer.httpclient45.feature"/>
       <feature id="org.eclipse.equinox.p2.rcp.feature"/>
       <feature id="org.eclipse.ecf.filetransfer.feature"/>
       <feature id="org.eclipse.ecf.core.ssl.feature"/>
+      <feature id="org.eclipse.ecf.filetransfer.httpclient5.feature" installMode="root"/>
       <feature id="org.eclipse.ecf.filetransfer.ssl.feature"/>
       <feature id="org.eclipse.e4.rcp"/>
       <feature id="org.eclipse.egit" installMode="root"/>
       <feature id="org.eclipse.egit.gitflow.feature" installMode="root"/>
       <feature id="org.eclipse.jgit" installMode="root"/>
+      <feature id="org.eclipse.jgit.gpg.bc" installMode="root"/>
+      <feature id="org.eclipse.jgit.http.apache" installMode="root"/>
+      <feature id="org.eclipse.jgit.ssh.apache" installMode="root"/>
       <feature id="org.eclipse.mylyn.wikitext.editors_feature" installMode="root"/>
       <feature id="org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped" installMode="root"/>
       <feature id="org.eclipse.shellwax.feature" installMode="root"/>
+      <feature id="org.eclipse.tm.terminal.connector.local.feature" installMode="root"/>
+      <feature id="org.eclipse.tm.terminal.connector.ssh.feature" installMode="root"/>
+      <feature id="org.eclipse.tm.terminal.connector.telnet.feature" installMode="root"/>
+      <feature id="org.eclipse.tm.terminal.control.feature" installMode="root"/>
       <feature id="org.eclipse.tm.terminal.feature" installMode="root"/>
+      <feature id="org.eclipse.tm.terminal.view.feature" installMode="root"/>
+      <feature id="org.eclipse.wildwebdeveloper.embedder.node.feature" installMode="root"/>
       <feature id="org.eclipse.wildwebdeveloper.feature" installMode="root"/>
       <feature id="org.eclipse.wildwebdeveloper.xml.feature" installMode="root"/>
       <feature id="org.haxe4e.studio.feature" installMode="root"/>
@@ -367,6 +376,7 @@ version(s), and exceptions or additional permissions here}.&quot;
       <feature id="de.jcup.batcheditor" installMode="root"/>
       <feature id="de.anbos.eclipse.easyshell.feature" installMode="root"/>
       <feature id="net.mihai-nita.ansicon" installMode="root"/>
+      <feature id="de.sebthom.eclipse.commons.feature" installMode="root"/>
       <feature id="de.sebthom.eclipse.findview.feature" installMode="root"/>
       <feature id="de.sebthom.eclipse.open-with-eclipse.feature" installMode="root"/>
       <feature id="net.certiv.tools.indentguide.feature" installMode="root"/>
@@ -381,10 +391,6 @@ version(s), and exceptions or additional permissions here}.&quot;
    </configurations>
 
    <repositories>
-      <repository location="https://raw.githubusercontent.com/haxe4e/haxe-studio/updatesite/" enabled="true" />
-      <repository location="https://raw.githubusercontent.com/haxe4e/haxe4e/updatesite/" enabled="true" />
-      <repository location="https://raw.githubusercontent.com/haxe4e/haxe-studio/updatesite/" enabled="true" />
-      <repository location="https://raw.githubusercontent.com/haxe4e/haxe4e/updatesite/" enabled="true" />
       <repository location="https://raw.githubusercontent.com/haxe4e/haxe-studio/updatesite/" enabled="true" />
       <repository location="https://raw.githubusercontent.com/haxe4e/haxe4e/updatesite/" enabled="true" />
    </repositories>
