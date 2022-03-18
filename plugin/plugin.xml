@@ -89,6 +89,7 @@
       <content-type base-type="org.haxe4e.content.base" priority="high" id="org.haxe4e.content.lua" name="Lua File" file-extensions="lua,p8,rockspec"/>
       <content-type base-type="org.haxe4e.content.base" priority="high" id="org.haxe4e.content.php" name="PHP File" file-extensions="php,phtml"/>
       <content-type base-type="org.haxe4e.content.base" priority="high" id="org.haxe4e.content.py" name="Python File" file-extensions="py,gp"/>
+      <content-type base-type="org.haxe4e.content.base" priority="high" id="org.haxe4e.content.toml" name="Python File" file-extensions="toml"/>
 
       <file-association content-type="org.haxe4e.content.c++" file-extensions="c,h,cpp,hpp" />
       <file-association content-type="org.haxe4e.content.cs" file-extensions="cs" />
@@ -97,6 +98,7 @@
       <file-association content-type="org.haxe4e.content.lua" file-extensions="lua,p8,rockspec" />
       <file-association content-type="org.haxe4e.content.php" file-extensions="php,phtml" />
       <file-association content-type="org.haxe4e.content.py" file-extensions="py,gp" />
+      <file-association content-type="org.haxe4e.content.toml" file-extensions="toml" />
    </extension>
 
    <!-- ===================================== -->
@@ -124,6 +126,7 @@
       <grammar path="src/main/resources/langcfg/lua.tmLanguage" scopeName="source.lua" />
       <grammar path="src/main/resources/langcfg/php.tmLanguage" scopeName="text.html.php" />
       <grammar path="src/main/resources/langcfg/python.tmLanguage" scopeName="source.python" />
+      <grammar path="src/main/resources/langcfg/toml.tmLanguage" scopeName="source.toml" />
       <scopeNameContentTypeBinding contentTypeId="org.haxe4e.content.c++" scopeName="source.c++" />
       <scopeNameContentTypeBinding contentTypeId="org.haxe4e.content.cs" scopeName="source.cs" />
       <scopeNameContentTypeBinding contentTypeId="org.haxe4e.content.ini" scopeName="source.ini" />
@@ -131,6 +134,7 @@
       <scopeNameContentTypeBinding contentTypeId="org.haxe4e.content.lua" scopeName="source.lua" />
       <scopeNameContentTypeBinding contentTypeId="org.haxe4e.content.php" scopeName="text.html.php" />
       <scopeNameContentTypeBinding contentTypeId="org.haxe4e.content.py" scopeName="source.python" />
+      <scopeNameContentTypeBinding contentTypeId="org.haxe4e.content.toml" scopeName="source.toml" />
    </extension>
 
    <!-- ===================================== -->

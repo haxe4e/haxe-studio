@@ -177,6 +177,22 @@
                      <overwrite>${update-language-grammar}</overwrite>
                   </configuration>
                </execution>
+
+               <!-- *.toml lang config -->
+               <execution>
+                  <id>toml.tmLanguage</id>
+                  <phase>generate-resources</phase>
+                  <goals>
+                     <goal>wget</goal>
+                  </goals>
+                  <configuration>
+                     <uri>https://raw.githubusercontent.com/textmate/toml.tmbundle/master/Syntaxes/TOML.tmLanguage</uri>
+                     <outputDirectory>src/main/resources/langcfg</outputDirectory>
+                     <outputFileName>toml.tmLanguage</outputFileName>
+                     <skipCache>true</skipCache>
+                     <overwrite>${update-language-grammar}</overwrite>
+                  </configuration>
+               </execution>
             </executions>
          </plugin>
       </plugins>
