@@ -28,6 +28,7 @@ defaults:
 jobs:
   build:
     runs-on: windows-latest
+    concurrency: ci-${{ github.ref }}
     steps:
     - name: Git Checkout
       uses: actions/checkout@v3 #https://github.com/actions/checkout
@@ -150,5 +151,3 @@ jobs:
         name: "*"
         useGlob: true
         failOnError: false
-
-
