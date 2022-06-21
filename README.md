@@ -74,10 +74,10 @@ compatibility of the compiled artifacts with the runtime library of the required
 
 To build the project follow these steps:
 
-1. Download and install a Java 11 SDK, e.g. from:
+1. Download and install a Java 17 SDK, e.g. from:
    - https://github.com/ojdkbuild/ojdkbuild
-   - https://adoptium.net/releases.html?variant=openjdk11
-   - https://www.azul.com/downloads/?version=java-11-lts&architecture=x86-64-bit&package=jdk
+   - https://adoptium.net/releases.html?variant=openjdk17
+   - https://www.azul.com/downloads/?version=java-17-lts&architecture=x86-64-bit&package=jdk#download-openjdk
 
 1. Download and install the latest [Maven distribution](https://maven.apache.org/download.cgi).
 
@@ -89,17 +89,17 @@ To build the project follow these steps:
       <toolchain>
          <type>jdk</type>
          <provides>
-            <version>11</version>
+            <version>17</version>
             <vendor>default</vendor>
          </provides>
          <configuration>
-            <jdkHome>[PATH_TO_YOUR_JDK_11]</jdkHome>
+            <jdkHome>[PATH_TO_YOUR_JDK_17]</jdkHome>
          </configuration>
       </toolchain>
    </toolchains>
    ```
 
-   Set the `[PATH_TO_YOUR_JDK_11]` parameter accordingly.
+   Set the `[PATH_TO_YOUR_JDK_17]` parameter accordingly.
 
 1. Checkout the code using one of the following methods:
 
