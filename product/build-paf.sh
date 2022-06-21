@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copyright 2021 by the Haxe4E authors
+# Copyright 2021-2022 by the Haxe4E authors
 # SPDX-License-Identifier: EPL-2.0
 #
 # Author: Sebastian Thomschke
