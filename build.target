@@ -9,7 +9,7 @@
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/justj/jres/17/updates/release" />
+            <repository location="https://download.eclipse.org/justj/jres/18/updates/release" />
             <unit id="org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped.feature.group" version="0.0.0" />
         </location>
 
