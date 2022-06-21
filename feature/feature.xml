@@ -44,7 +44,7 @@
       <import plugin="org.eclipse.ui.ide.application"/>
       <import plugin="org.eclipse.ui.genericeditor"/>
       <import plugin="net.sf.jstuff.core" version="5.21.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.platform" version="4.17.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.platform" version="4.24.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.filebuffers"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.jface"/>

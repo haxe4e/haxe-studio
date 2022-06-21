@@ -14,11 +14,7 @@
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <!--
-              Skipping Eclipe 2022-03 aka 4.23 because of https://bugs.eclipse.org/bugs/show_bug.cgi?id=579347
-              <repository location="https://download.eclipse.org/eclipse/updates/latest/" />
-            -->
-            <repository location="https://download.eclipse.org/eclipse/updates/4.22/" />
+            <repository location="https://download.eclipse.org/eclipse/updates/4.24/" />
             <unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0" />
             <unit id="org.eclipse.sdk.ide" version="0.0.0" />
         </location>
