@@ -82,8 +82,9 @@
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
             <!-- Ansi Console Plugin https://github.com/mihnita/ansi-econsole -->
-            <repository location="https://www.mihai-nita.net/eclipse"/>
-            <unit id="net.mihai-nita.ansicon.feature.group" version="0.0.0"/>
+            <repository location="https://www.mihai-nita.net/eclipse" />
+            <!-- TODO https://github.com/mihnita/ansi-econsole/pull/81 -->
+            <unit id="net.mihai-nita.ansicon.feature.group" version="1.4.6.202112080311" />
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
