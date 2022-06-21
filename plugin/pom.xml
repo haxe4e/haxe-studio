@@ -35,8 +35,6 @@
       <update-language-grammar>false</update-language-grammar>
    </properties>
 
-
-
    <build>
       <resources>
          <resource>
