@@ -8,7 +8,7 @@
    <extension point="org.eclipse.core.runtime.products" id="product">
       <!-- this is referenced in haxe4e.product as [plugin_id].[product_id], i.e. "org.haxe4e.studio.plugin.product" -->
       <!-- https://www.eclipse.org/articles/Article-Branding/branding-your-application.html -->
-      <product application="org.eclipse.ui.ide.workbench" name="Haxe Studio">
+      <product application="org.haxe4e.studio.application" name="Haxe Studio">
          <property name="appName" value="Haxe Studio"/>
          <property
                name="aboutText"
