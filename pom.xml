@@ -39,7 +39,7 @@
       <java.version>17</java.version>
 
       <!-- TODO see https://github.com/eclipse/tycho/issues/1103 https://github.com/eclipse/tycho/pull/1201 -->
-      <tycho.version>3.0.0-SNAPSHOT</tycho.version>
+      <tycho.version>3.0.0</tycho.version>
       <skip.enforcer.require-fixed-plugin-versions>true</skip.enforcer.require-fixed-plugin-versions>
 
       <!-- to prevent:
