@@ -34,7 +34,7 @@ jobs:
     concurrency: ci-${{ github.ref }}
     steps:
     - name: Git Checkout
-      uses: actions/checkout@v3 #https://github.com/actions/checkout
+      uses: actions/checkout@v3 # https://github.com/actions/checkout
 
     - name: Set up JDK ${{ env.JAVA_VERSION }}
       uses: actions/setup-java@v3 # https://github.com/actions/setup-java
@@ -144,12 +144,37 @@ jobs:
         set -eux
 
         cd /tmp
-        git clone https://${{ github.actor }}:${{ github.token }}@github.com/haxe4e/haxe-studio/ --single-branch --branch updatesite updatesite
+        github_repo_url="https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}"
+        if curl --output /dev/null --silent --head --fail "$github_repo_url/tree/updatesite"; then
+          git clone $github_repo_url --single-branch --branch updatesite updatesite
         cd updatesite
         # https://github.community/t/github-actions-bot-email-address/17204
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git reset --hard HEAD^
+        else
+          git clone $github_repo_url updatesite
+          cd updatesite
+          git checkout --orphan updatesite
+          git rm -rf .
+          cat <<EOF > index.html
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <title>${{ github.repository }} - Update Site</title>
+            </head>
+            <body>
+            <h1>${{ github.repository }} - Update Site</h1>
+            </body>
+            </html>
+        EOF
+          git add index.html
+          # https://github.community/t/github-actions-bot-email-address/17204
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Initialize Update Site"
+        fi
+
         mv $(cygpath $GITHUB_WORKSPACE)/product/target/repository/* .
         git add --all
         git commit -am "deploy p2 update site"
