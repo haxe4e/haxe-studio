@@ -9,7 +9,7 @@
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/justj/jres/18/updates/release" />
+            <repository location="https://download.eclipse.org/justj/jres/19/updates/release" />
             <unit id="org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped.feature.group" version="0.0.0" />
         </location>
 
@@ -129,5 +129,5 @@
         </location>
     </locations>
 
-    <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-18"/>
+    <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-19"/>
 </target>
