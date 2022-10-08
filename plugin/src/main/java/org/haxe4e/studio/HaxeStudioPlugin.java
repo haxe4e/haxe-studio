@@ -4,6 +4,9 @@
  */
 package org.haxe4e.studio;
 
+import static net.sf.jstuff.core.validation.NullAnalysisHelper.*;
+
+import org.eclipse.jdt.annotation.Nullable;
 import org.osgi.framework.BundleContext;
 
 import de.sebthom.eclipse.commons.AbstractEclipsePlugin;
@@ -17,14 +20,14 @@ import net.sf.jstuff.core.validation.Assert;
  */
 public class HaxeStudioPlugin extends AbstractEclipsePlugin {
 
-   private static HaxeStudioPlugin instance;
+   private static @Nullable HaxeStudioPlugin instance;
 
    /**
     * @return the shared instance
     */
    public static HaxeStudioPlugin get() {
       Assert.notNull(instance, "Default plugin instance is still null.");
-      return instance;
+      return asNonNullUnsafe(instance);
    }
 
    public static PluginLogger log() {
@@ -41,8 +44,9 @@ public class HaxeStudioPlugin extends AbstractEclipsePlugin {
 
    @Override
    public BundleResources getBundleResources() {
+      var bundleResources = this.bundleResources;
       if (bundleResources == null) {
-         bundleResources = new BundleResources(this, "src/main/resources");
+         bundleResources = this.bundleResources = new BundleResources(this, "src/main/resources");
       }
       return bundleResources;
    }

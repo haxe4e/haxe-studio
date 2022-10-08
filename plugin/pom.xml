@@ -83,7 +83,40 @@
                </execution>
             </executions>
          </plugin>
+
+         <plugin>
+            <!-- https://tycho.eclipseprojects.io/doc/3.0.0/tycho-compiler-plugin/plugin-info.html -->
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>tycho-compiler-plugin</artifactId>
+            <configuration>
+               <!-- workaround for tycho-compiler-plugin ignoring EEAs loaded via
+                    build.properties: jars.extra.classpath = ...,platform:/plugin/com.vegardit.no-npe.eea-all
+               -->
+               <compilerArgs>
+                  <arg>-annotationpath</arg>
+                  <arg>${com.vegardit.no-npe:no-npe-eea-all:jar}</arg>
+               </compilerArgs>
+            </configuration>
+         </plugin>
       </plugins>
    </build>
+
+   <dependencies>
+      <dependency>
+         <!-- only required for workaround for tycho-compiler-plugin ignoring EEAs loaded via
+              build.properties: jars.extra.classpath = ...,platform:/plugin/com.vegardit.no-npe.eea-all
+         -->
+         <groupId>com.vegardit.no-npe</groupId>
+         <artifactId>no-npe-eea-all</artifactId>
+         <version>1.0.0-SNAPSHOT</version>
+         <scope>provided</scope>
+      </dependency>
+   </dependencies>
+   <repositories>
+      <repository>
+         <id>no-npe-snapshots</id>
+         <url>https://raw.githubusercontent.com/vegardit/no-npe/mvn-snapshots-repo/</url>
+      </repository>
+   </repositories>
 
 </project>

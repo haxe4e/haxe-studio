@@ -4,12 +4,15 @@
  */
 package org.haxe4e.studio;
 
+import static net.sf.jstuff.core.validation.NullAnalysisHelper.*;
+
 import java.net.URL;
 
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.core.runtime.preferences.ConfigurationScope;
 import org.eclipse.equinox.app.IApplicationContext;
+import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
@@ -32,7 +35,7 @@ public class HaxeStudioApplication extends IDEApplication {
     * Only overriding {@link IDEApplication#start(IApplicationContext)} to configure custom WorkbenchAdvisor
     */
    @Override
-   public Object start(final IApplicationContext ctx) throws Exception {
+   public Object start(final @Nullable IApplicationContext ctx) throws Exception {
       Job.getJobManager().suspend();
 
       final var display = createDisplay();
@@ -46,7 +49,7 @@ public class HaxeStudioApplication extends IDEApplication {
             shell.setImages(Window.getDefaultImages());
          }
 
-         final var instanceLocationCheck = checkInstanceLocation(shell, ctx.getArguments());
+         final var instanceLocationCheck = checkInstanceLocation(shell, asNonNull(ctx).getArguments());
          if (instanceLocationCheck != null) {
             WorkbenchPlugin.unsetSplashShell(display);
             return instanceLocationCheck;
@@ -70,7 +73,7 @@ public class HaxeStudioApplication extends IDEApplication {
    }
 
    @Override
-   protected ReturnCode checkValidWorkspace(final Shell shell, final URL url) {
+   protected @Nullable ReturnCode checkValidWorkspace(final @Nullable Shell shell, final @Nullable URL url) {
 
       /* prevent "Workspace was written with an older version of the product" warning.
        * see https://stackoverflow.com/questions/63029131/is-there-a-way-to-force-an-update-to-the-eclipse-workspace
