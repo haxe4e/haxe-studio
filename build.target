@@ -77,12 +77,6 @@
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <!-- Ansi Console Plugin https://github.com/mihnita/ansi-econsole -->
-            <repository location="https://www.mihai-nita.net/eclipse" />
-            <unit id="net.mihai-nita.ansicon.feature.group" version="0.0.0" />
-        </location>
-
-        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
             <repository location="https://raw.githubusercontent.com/sebthom/eclipse-commons/updatesite" />
             <unit id="de.sebthom.eclipse.commons.feature.feature.group" version="0.0.0" />
         </location>
