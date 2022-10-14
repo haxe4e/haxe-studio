@@ -4,6 +4,8 @@
  */
 package org.haxe4e.studio.launch;
 
+import static net.sf.jstuff.core.validation.NullAnalysisHelper.*;
+
 import org.eclipse.core.externaltools.internal.IExternalToolConstants;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
@@ -50,7 +52,7 @@ public class RunExternalProgramShortcut implements ILaunchShortcut {
       final var launchMgr = DebugPlugin.getDefault().getLaunchManager();
       final var launchConfigType = launchMgr.getLaunchConfigurationType(IExternalToolConstants.ID_PROGRAM_LAUNCH_CONFIGURATION_TYPE);
 
-      final var project = programFile.getProject();
+      final var project = asNonNull(programFile.getProject());
       final var location = "${workspace_loc:/" + project.getName() + "/" + programFile.getProjectRelativePath() + "}";
       final var workDir = "${workspace_loc:/" + project.getName() + "}";
       try {
