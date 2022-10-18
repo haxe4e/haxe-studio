@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Haxe Studio" uid="org.haxe4e.studio" id="org.haxe4e.studio.plugin.product" application="org.haxe4e.studio.application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Haxe Studio" uid="org.haxe4e.studio" id="org.haxe4e.studio.plugin.product" application="org.haxe4e.studio.application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true" autoIncludeRequirements="true">
 
    <aboutInfo>
       <image path="src/main/resources/images/logo/haxe4e_logo64x64.png"/>
@@ -18,6 +18,7 @@ This product includes software developed by other open source projects including
    <configIni use="default">
    </configIni>
 
+   <!-- TODO add-opens java.base/java.lang=ALL-UNNAMED for https://github.com/eclipse/lsp4j/issues/674#issuecomment-1281647828 -->
    <launcherArgs>
       <programArgs>-perspective org.haxe4e.perspective
 --launcher.defaultAction openFile
@@ -28,6 +29,7 @@ This product includes software developed by other open source projects including
 -Declipse.p2.unsignedPolicy=allow
 -XX:+HeapDumpOnOutOfMemoryError
 -Djface.allWizardsNonModal=true
+--add-opens java.base/java.lang=ALL-UNNAMED
       </vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
@@ -353,7 +355,6 @@ version(s), and exceptions or additional permissions here}.&quot;
       <feature id="org.eclipse.help"/>
       <feature id="org.eclipse.platform"/>
       <feature id="org.eclipse.rcp"/>
-
       <feature id="org.eclipse.egit" installMode="root"/>
       <feature id="org.eclipse.egit.gitflow.feature" installMode="root"/>
       <feature id="org.eclipse.jgit" installMode="root"/>
@@ -372,10 +373,8 @@ version(s), and exceptions or additional permissions here}.&quot;
       <feature id="org.eclipse.wildwebdeveloper.embedder.node.feature" installMode="root"/>
       <feature id="org.eclipse.wildwebdeveloper.feature" installMode="root"/>
       <feature id="org.eclipse.wildwebdeveloper.xml.feature" installMode="root"/>
-
       <feature id="org.haxe4e.studio.feature" installMode="root"/>
       <feature id="org.haxe4e.feature" installMode="root"/>
-
       <feature id="de.jcup.batcheditor" installMode="root"/>
       <feature id="de.anbos.eclipse.easyshell.feature" installMode="root"/>
       <feature id="de.sebthom.eclipse.commons.feature" installMode="root"/>
