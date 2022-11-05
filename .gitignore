@@ -10,7 +10,8 @@ workspace
 .classpath
 .factorypath
 .project
-.settings/
+**/.settings/*
+!**/.settings/org.eclipse.jdt.core.prefs
 bin/
 **/.*.md.html
 
