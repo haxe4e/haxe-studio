@@ -17,7 +17,7 @@
 
 ## <a name="what-is-it"></a>What is it?
 
-Haxe Studio is an [Eclipse](https://eclipse.org) based IDE to for development using the [Haxe](https://haxe.org) general purpose
+Haxe Studio is an [Eclipse](https://eclipse.org) based IDE for development using the [Haxe](https://haxe.org) general purpose
 programming language.
 
 It has the following plugins pre-installed:
