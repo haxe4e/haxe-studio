@@ -67,7 +67,7 @@ cd $THIS_FILE_DIR/target
 # -mqs sorts files by type instead by name which increases compression ratio
 7z a -spf -y -mqs -mx1 -bt HaxeStudioPortable.7z HaxeStudioPortable
 
-curl -sSfL https://www.7-zip.org/a/7z1900-x64.exe > 7z.exe
+curl -sSfL https://www.7-zip.org/a/7z2201-x64.exe > 7z.exe
 
 7z x 7z.exe 7z.sfx
 cp 7z.sfx HaxeStudioPortable.paf.exe
