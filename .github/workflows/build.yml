@@ -48,7 +48,7 @@ jobs:
         path: |
           ~/.m2/repository
           !~/.m2/**/*SNAPSHOT*
-          !~/.m2/**/org.haxe4e*
+          !~/.m2/**/.cache/tycho/https/raw.githubusercontent.com
         key: ${{ runner.os }}-mvnrepo-${{ hashFiles('**/pom.xml') }}-${{ hashFiles('build.target') }}
         restore-keys: |
           ${{ runner.os }}-mvnrepo-
