@@ -44,15 +44,15 @@
       <import plugin="org.eclipse.ui.ide.application"/>
       <import plugin="org.eclipse.ui.genericeditor"/>
       <import plugin="net.sf.jstuff.core" version="7.4.0" match="compatible"/>
-      <import plugin="org.eclipse.platform" version="4.24.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.filebuffers"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.jface.text"/>
       <import plugin="org.eclipse.osgi"/>
       <import plugin="org.eclipse.ui.workbench.texteditor"/>
-      <import plugin="org.apache.commons.commons-io" version="2.11.0" match="greaterOrEqual"/>
-      <import plugin="org.apache.commons.lang3" version="3.12.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.platform" version="4.24.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.commons.commons-io" version="2.11.0" match="compatible"/>
+      <import plugin="org.apache.commons.lang3" version="3.12.0" match="compatible"/>
    </requires>
 
    <plugin
