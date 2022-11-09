@@ -52,15 +52,15 @@
             <executions>
                <!-- *.java lang config -->
                <execution>
-                  <id>java.tmLanguage</id>
+                  <id>java.tmLanguage.json</id>
                   <phase>generate-resources</phase>
                   <goals>
                      <goal>wget</goal>
                   </goals>
                   <configuration>
-                     <uri>https://raw.githubusercontent.com/textmate/java.tmbundle/master/Syntaxes/Java.plist</uri>
-                     <outputDirectory>src/main/resources/syntaxes</outputDirectory>
-                     <outputFileName>java.tmLanguage</outputFileName>
+                     <uri>https://raw.githubusercontent.com/microsoft/vscode/main/extensions/java/syntaxes/java.tmLanguage.json</uri>
+                     <outputDirectory>src/main/resources/syntaxes/java</outputDirectory>
+                     <outputFileName>java.tmLanguage.json</outputFileName>
                      <skipCache>true</skipCache>
                      <overwrite>${update-language-grammar}</overwrite>
                   </configuration>
@@ -74,8 +74,8 @@
                      <goal>wget</goal>
                   </goals>
                   <configuration>
-                     <uri>https://raw.githubusercontent.com/textmate/python.tmbundle/master/Syntaxes/Python.tmLanguage</uri>
-                     <outputDirectory>src/main/resources/syntaxes</outputDirectory>
+                     <uri>https://github.com/MagicStack/MagicPython/blob/master/grammars/MagicPython.tmLanguage</uri>
+                     <outputDirectory>src/main/resources/syntaxes/python</outputDirectory>
                      <outputFileName>python.tmLanguage</outputFileName>
                      <skipCache>true</skipCache>
                      <overwrite>${update-language-grammar}</overwrite>
