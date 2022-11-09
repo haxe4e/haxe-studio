@@ -8,20 +8,20 @@
 **Feedback and high-quality pull requests are  highly welcome!**
 
 1. [About](#about)
-1. [What is it?](#what-is-it)
 1. [Download](#download)
 1. [Usage](#usage)
 1. [Building from Sources](#building)
-1. [Version History](#version-history)
+1. [Acknowledgement](#acknowledgement)
+1. [License](#license)
 
 
-## <a name="what-is-it"></a>What is it?
+## <a name="about"></a>About
 
 Haxe Studio is an [Eclipse](https://eclipse.org) based IDE for development using the [Haxe](https://haxe.org) general purpose
 programming language.
 
 It has the following plugins pre-installed:
-- [haxe4e](https://github.com/haxe4e/haxe4e) - Haxe programming language support for the Eclipse IDE
+- [haxe4e](https://github.com/haxe4e/haxe4e) - Haxe programming language support
 - [Batch Editor](https://github.com/de-jcup/eclipse-batch-editor) - Windows Batch File Editor
 - [EGit](https://www.eclipse.org/egit/) - Git support
 - [Easy Shell](https://anb0s.github.io/EasyShell/) - opens shell windows or file managers from the popup menu in the navigation tree
