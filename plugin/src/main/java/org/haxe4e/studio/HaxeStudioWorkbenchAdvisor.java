@@ -35,6 +35,7 @@ public class HaxeStudioWorkbenchAdvisor extends IDEWorkbenchAdvisor {
       final var resPrefs = new ScopedPreferenceStore(ConfigurationScope.INSTANCE, "org.eclipse.core.resources");
       resPrefs.setDefault("encoding", "UTF-8");
       resPrefs.setDefault("refresh.lightweight.enabled", true);
+      resPrefs.setDefault("missingEncodingMarkerSeverity", -1); // -1=IGNORE, 0=INFO, 1=WARN, 2=ERROR
 
       final var uiPrefs = new ScopedPreferenceStore(ConfigurationScope.INSTANCE, "org.eclipse.ui");
       uiPrefs.setDefault("ENABLE_ANIMATIONS", false);
