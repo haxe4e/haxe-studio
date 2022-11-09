@@ -105,6 +105,12 @@
             <unit id="net.certiv.tools.indentguide.feature.feature.group" version="0.0.0" />
         </location>
 
+        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+            <!-- https://github.com/achimmihca/EclipseLineShortcuts -->
+            <repository location="https://raw.githubusercontent.com/achimmihca/EclipseLineShortcuts/release/updatesite" />
+            <unit id="de.achimmihca.lineshortcuts.feature.feature.group" version="0.0.0" />
+        </location>
+
         <location includeDependencyDepth="infinite" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
             <dependencies>
                 <dependency>
