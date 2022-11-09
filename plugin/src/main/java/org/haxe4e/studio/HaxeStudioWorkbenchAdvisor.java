@@ -83,6 +83,7 @@ public class HaxeStudioWorkbenchAdvisor extends IDEWorkbenchAdvisor {
       final var teamPrefs = new ScopedPreferenceStore(ConfigurationScope.INSTANCE, "org.eclipse.team.ui");
       teamPrefs.setDefault("org.eclipse.team.ui.compress_folders", true);
       teamPrefs.setDefault("org.eclipse.team.ui.default_layout", "org.eclipse.team.ui.compressed_layout");
+      teamPrefs.setDefault("org.eclipse.team.ui.pref_generichistory_view_linking", true);
       teamPrefs.setDefault("org.eclipse.team.ui.run_import_in_background_", true);
 
       final var egitCorePrefs = new ScopedPreferenceStore(ConfigurationScope.INSTANCE, "org.eclipse.egit.core");
@@ -94,6 +95,7 @@ public class HaxeStudioWorkbenchAdvisor extends IDEWorkbenchAdvisor {
       egitUiPrefs.setDefault("decorator_projecttext_decoration", "{name} [{repository }{branch}{ branch_status}]");
       egitUiPrefs.setDefault("decorator_submoduletext_decoration", "{name} [{branch}{ branch_status}]{ short_message}");
       egitUiPrefs.setDefault("decorator_show_dirty_icon", true);
+      egitUiPrefs.setDefault("resourcehistory_show_findtoolbar", true);
       egitUiPrefs.setDefault("show_push_success_dialog", false);
 
       final var easyShellPrefs = new ScopedPreferenceStore(ConfigurationScope.INSTANCE, "de.anbos.eclipse.easyshell.plugin");
