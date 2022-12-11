@@ -4,111 +4,114 @@
     <locations>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/cbi/updates/license" />
-            <unit id="org.eclipse.license.feature.group" version="0.0.0" />
+            <repository location="https://download.eclipse.org/cbi/updates/license"/>
+            <unit id="org.eclipse.license.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/justj/jres/19/updates/release" />
-            <unit id="org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped.feature.group" version="0.0.0" />
+            <repository location="https://download.eclipse.org/justj/jres/19/updates/release/latest"/>
+            <unit id="org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/eclipse/updates/4.25/" />
-            <unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0" />
-            <unit id="org.eclipse.sdk.ide" version="0.0.0" />
+            <repository location="https://download.eclipse.org/eclipse/updates/4.26/"/>
+            <unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.sdk.ide" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/lsp4e/releases/latest/" />
-            <unit id="org.eclipse.lsp4e" version="0.0.0" />
-            <unit id="org.eclipse.lsp4e.debug" version="0.0.0" />
+            <repository location="https://download.eclipse.org/lsp4e/releases/latest/"/>
+            <unit id="org.eclipse.lsp4e" version="0.0.0"/>
+            <unit id="org.eclipse.lsp4e.debug" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/tm4e/releases/latest/" />
-            <unit id="org.eclipse.tm4e.feature.feature.group" version="0.0.0" />
+            <repository location="https://download.eclipse.org/tm4e/releases/latest/"/>
+            <unit id="org.eclipse.tm4e.feature.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://raw.githubusercontent.com/haxe4e/haxe4e/updatesite/" />
-            <unit id="org.haxe4e.feature.feature.group" version="0.0.0" />
+            <repository location="https://raw.githubusercontent.com/haxe4e/haxe4e/updatesite/"/>
+            <unit id="org.haxe4e.feature.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/egit/updates/" />
-            <unit id="org.eclipse.egit.feature.group" version="0.0.0" />
-            <unit id="org.eclipse.egit.gitflow.feature.feature.group" version="0.0.0" />
-            <unit id="org.eclipse.jgit.feature.group" version="0.0.0" />
+            <repository location="https://download.eclipse.org/egit/updates/"/>
+            <unit id="org.eclipse.egit.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.egit.gitflow.feature.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.jgit.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/wildwebdeveloper/releases/latest/" />
-            <unit id="org.eclipse.wildwebdeveloper.feature.feature.group" version="0.0.0" />
-            <unit id="org.eclipse.wildwebdeveloper.embedder.node.feature.feature.group" version="0.0.0" />
+            <repository location="https://download.eclipse.org/wildwebdeveloper/releases/latest/"/>
+            <unit id="org.eclipse.wildwebdeveloper.feature.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.wildwebdeveloper.embedder.node.feature.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/mylyn/docs/releases/3.0/" />
-            <unit id="org.eclipse.mylyn.wikitext.editors_feature.feature.group" version="0.0.0" />
+            <!-- TODO see https://github.com/eclipse-mylyn/org.eclipse.mylyn/issues/6
+              <repository location="https://download.eclipse.org/mylyn/docs/releases/3.0/"/>
+            -->
+            <repository location="https://download.eclipse.org/mylyn/docs/releases/3.0.45/"/>
+            <unit id="org.eclipse.mylyn.wikitext.editors_feature.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/tools/cdt/releases/latest/" />
-            <unit id="org.eclipse.tm.terminal.feature.feature.group" version="0.0.0" />
+            <repository location="https://download.eclipse.org/tools/cdt/releases/latest/"/>
+            <unit id="org.eclipse.tm.terminal.feature.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
             <!-- Shell/Bash File Editor -->
-            <repository location="https://download.eclipse.org/shellwax/releases/latest/" />
-            <unit id="org.eclipse.shellwax.feature.feature.group" version="0.0.0" />
+            <repository location="https://download.eclipse.org/shellwax/releases/latest/"/>
+            <unit id="org.eclipse.shellwax.feature.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
             <!-- Windows Batch File Editor -->
-            <repository location="https://de-jcup.github.io/update-site-eclipse-batch-editor/update-site/" />
-            <unit id="de.jcup.batcheditor.feature.group" version="0.0.0" />
+            <repository location="https://de-jcup.github.io/update-site-eclipse-batch-editor/update-site/"/>
+            <unit id="de.jcup.batcheditor.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
             <!-- EasyShell Plugin https://github.com/anb0s/EasyShell -->
-            <repository location="https://anb0s.github.io/EasyShell" />
-            <unit id="de.anbos.eclipse.easyshell.feature.feature.group" version="0.0.0" />
+            <repository location="https://anb0s.github.io/EasyShell"/>
+            <unit id="de.anbos.eclipse.easyshell.feature.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://raw.githubusercontent.com/sebthom/eclipse-commons/updatesite" />
-            <unit id="de.sebthom.eclipse.commons.feature.feature.group" version="0.0.0" />
+            <repository location="https://raw.githubusercontent.com/sebthom/eclipse-commons/updatesite"/>
+            <unit id="de.sebthom.eclipse.commons.feature.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
             <!-- Open with Eclipse https://github.com/sebthom/open-with-eclipse-plugin -->
-            <repository location="https://raw.githubusercontent.com/sebthom/extra-syntax-highlighting-eclipse-plugin/updatesite" />
-            <unit id="de.sebthom.eclipse.extra-syntax-highlighting.feature.feature.group" version="0.0.0" />
+            <repository location="https://raw.githubusercontent.com/sebthom/extra-syntax-highlighting-eclipse-plugin/updatesite"/>
+            <unit id="de.sebthom.eclipse.extra-syntax-highlighting.feature.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
             <!-- Find/Replace View https://github.com/sebthom/findview-eclipse-plugin -->
-            <repository location="https://raw.githubusercontent.com/sebthom/findview-eclipse-plugin/updatesite" />
-            <unit id="de.sebthom.eclipse.findview.feature.feature.group" version="0.0.0" />
+            <repository location="https://raw.githubusercontent.com/sebthom/findview-eclipse-plugin/updatesite"/>
+            <unit id="de.sebthom.eclipse.findview.feature.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
             <!-- Open with Eclipse https://github.com/sebthom/open-with-eclipse-plugin -->
-            <repository location="https://raw.githubusercontent.com/sebthom/open-with-eclipse-plugin/updatesite" />
-            <unit id="de.sebthom.eclipse.open-with-eclipse.feature.feature.group" version="0.0.0" />
+            <repository location="https://raw.githubusercontent.com/sebthom/open-with-eclipse-plugin/updatesite"/>
+            <unit id="de.sebthom.eclipse.open-with-eclipse.feature.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
             <!-- Indent Guide https://github.com/grosenberg/IndentGuide -->
-            <repository location="https://www.certiv.net/updates" />
-            <unit id="net.certiv.tools.indentguide.feature.feature.group" version="0.0.0" />
+            <repository location="https://www.certiv.net/updates"/>
+            <unit id="net.certiv.tools.indentguide.feature.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
             <!-- https://github.com/achimmihca/EclipseLineShortcuts -->
-            <repository location="https://raw.githubusercontent.com/achimmihca/EclipseLineShortcuts/release/updatesite" />
-            <unit id="de.achimmihca.lineshortcuts.feature.feature.group" version="0.0.0" />
+            <repository location="https://raw.githubusercontent.com/achimmihca/EclipseLineShortcuts/release/updatesite"/>
+            <unit id="de.achimmihca.lineshortcuts.feature.feature.group" version="0.0.0"/>
         </location>
 
         <location includeDependencyDepth="infinite" includeDependencyScopes="compile" includeSource="true" missingManifest="generate" type="Maven">
