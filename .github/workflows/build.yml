@@ -57,11 +57,11 @@ jobs:
       with:
         path: |
           ~/.m2/repository
-          !~/.m2/**/*SNAPSHOT*
-          !~/.m2/**/.cache/tycho/https/raw.githubusercontent.com
-        key: ${{ runner.os }}-mvnrepo-${{ hashFiles('**/pom.xml') }}-${{ hashFiles('build.target') }}
+          !~/.m2/repository/.cache/tycho/https/raw.githubusercontent.com
+          !~/.m2/repository/*SNAPSHOT*
+        key: ${{ runner.os }}-mvnrepo-${{ hashFiles('build.target') }}-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
-          ${{ runner.os }}-mvnrepo-
+          ${{ runner.os }}-mvnrepo-${{ hashFiles('build.target') }}
 
     - name: Set up Maven
       uses: stCarolas/setup-maven@v4.5 # https://github.com/stCarolas/setup-maven
