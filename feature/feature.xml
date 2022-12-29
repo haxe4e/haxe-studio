@@ -43,7 +43,7 @@
       <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.ui.ide.application"/>
       <import plugin="org.eclipse.ui.genericeditor"/>
-      <import plugin="net.sf.jstuff.core" version="7.4.0" match="compatible"/>
+      <import plugin="net.sf.jstuff.core" version="7.5.0" match="compatible"/>
       <import plugin="org.eclipse.core.filebuffers"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.jface"/>

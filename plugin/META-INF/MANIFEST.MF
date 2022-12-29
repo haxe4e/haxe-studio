@@ -20,5 +20,5 @@ Require-Bundle: org.eclipse.core.contenttype,
  org.eclipse.ui.ide,
  org.eclipse.ui.ide.application,
  org.eclipse.ui.genericeditor,
- net.sf.jstuff.core;bundle-version="[7.4.0,8.0.0)",
+ net.sf.jstuff.core;bundle-version="[7.5.0,8.0.0)",
  de.sebthom.eclipse.commons
