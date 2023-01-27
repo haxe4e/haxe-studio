@@ -8,6 +8,7 @@ on:
     tags-ignore:
     - '**'
     paths-ignore:
+    - '**/*.adoc'
     - '**/*.md'
     - '.github/*.yml'
   pull_request:
@@ -31,30 +32,39 @@ env:
 jobs:
   build:
     runs-on: windows-latest
-    concurrency: ci-${{ github.ref }}
+
+    concurrency:
+      group: ci-${{ github.ref }}
+      cancel-in-progress: ${{ github.event_name == 'repository_dispatch' }}
+
     steps:
+    - name: Show environment variables
+      run: env | sort
 
     - name: Git Checkout
       uses: actions/checkout@v3 # https://github.com/actions/checkout
 
-    - name: Set up JDK ${{ env.JAVA_VERSION }}
+
+    - name: "Install: JDK ${{ env.JAVA_VERSION }}"
       uses: actions/setup-java@v3 # https://github.com/actions/setup-java
       with:
-        distribution: microsoft # not using temurin, zulu which seems to miss Let's Encrypt root ca in truststore
+        distribution: temurin
         java-version: ${{ env.JAVA_VERSION }}
 
-    - name: "Cache: Local Maven Repository"
-      uses: actions/cache@v3
+
+    - name: "Cache: Restore"
+      id: cache-restore
+      if: ${{ !env.ACT }} # https://github.com/nektos/act#skipping-steps
+      uses: actions/cache/restore@v3
       with:
         path: |
           ~/.m2/repository
           !~/.m2/repository/.cache/tycho/https/raw.githubusercontent.com
           !~/.m2/repository/*SNAPSHOT*
-        key: ${{ runner.os }}-mvnrepo-${{ hashFiles('build.target') }}-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-mvnrepo-${{ hashFiles('build.target') }}
+        key: ${{ runner.os }}-${{ hashFiles('build.target') }}-${{ hashFiles('**/pom.xml') }}
 
-    - name: Set up Maven
+
+    - name: "Install: Maven"
       uses: stCarolas/setup-maven@v4.5 # https://github.com/stCarolas/setup-maven
       with:
         maven-version: 3.8.6
@@ -103,7 +113,7 @@ jobs:
 
 
     - name: "Delete previous 'latest' release"
-      if: github.ref == 'refs/heads/main'
+      if: ${{ github.ref == 'refs/heads/main' && !env.ACT }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
@@ -127,7 +137,7 @@ jobs:
 
 
     - name: "Create 'latest' release"
-      if: github.ref == 'refs/heads/main'
+      if: ${{ github.ref == 'refs/heads/main' && !env.ACT }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
@@ -144,7 +154,7 @@ jobs:
 
 
     - name: Deploy p2 update site
-      if: github.ref == 'refs/heads/main'
+      if: ${{ github.ref == 'refs/heads/main' && !env.ACT }}
       run: |
         set -eux
 
@@ -186,8 +196,24 @@ jobs:
         git push origin updatesite --force
 
 
-    - name: "Delete intermediate build artifacts"
-      uses: geekyeggo/delete-artifact@v2 # https://github.com/GeekyEggo/delete-artifact/
+    ##################################################
+    # Cache Update
+    # See https://github.com/actions/cache/issues/342
+    ##################################################
+    - name: "Cache: Delete Previous"
+      if: ${{ steps.cache-restore.outputs.cache-hit && !env.ACT }}
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        gh extension install actions/gh-actions-cache
+        gh actions-cache delete ${{ steps.cache-restore.outputs.cache-primary-key }} --confirm
+
+    - name: "Cache: Update"
+      uses: actions/cache/save@v3
+      if: ${{ always() && !env.ACT }} # save cache even fails
       with:
-        name: "*"
-        failOnError: false
+        path: |
+          ~/.m2/repository
+          !~/.m2/repository/.cache/tycho/https/raw.githubusercontent.com
+          !~/.m2/repository/*SNAPSHOT*
+        key: ${{ steps.cache-restore.outputs.cache-primary-key }}
