@@ -379,9 +379,9 @@ version(s), and exceptions or additional permissions here}.&quot;
       <feature id="de.achimmihca.lineshortcuts.feature" installMode="root"/>
       <feature id="de.anbos.eclipse.easyshell.feature" installMode="root"/>
       <feature id="de.sebthom.eclipse.commons.feature" installMode="root"/>
-      <feature id="de.sebthom.eclipse.extra-syntax-highlighting.feature" installMode="root"/>
+      <feature id="de.sebthom.eclipse.extra_syntax_highlighting.feature" installMode="root"/>
       <feature id="de.sebthom.eclipse.findview.feature" installMode="root"/>
-      <feature id="de.sebthom.eclipse.open-with-eclipse.feature" installMode="root"/>
+      <feature id="de.sebthom.eclipse.open_with_eclipse.feature" installMode="root"/>
       <feature id="net.certiv.tools.indentguide.feature" installMode="root"/>
    </features>
 

@@ -100,7 +100,7 @@
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
             <!-- Open with Eclipse https://github.com/sebthom/open-with-eclipse-plugin -->
             <repository location="https://raw.githubusercontent.com/sebthom/extra-syntax-highlighting-eclipse-plugin/updatesite"/>
-            <unit id="de.sebthom.eclipse.extra-syntax-highlighting.feature.feature.group" version="0.0.0"/>
+            <unit id="de.sebthom.eclipse.extra_syntax_highlighting.feature.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
@@ -112,7 +112,7 @@
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
             <!-- Open with Eclipse https://github.com/sebthom/open-with-eclipse-plugin -->
             <repository location="https://raw.githubusercontent.com/sebthom/open-with-eclipse-plugin/updatesite"/>
-            <unit id="de.sebthom.eclipse.open-with-eclipse.feature.feature.group" version="0.0.0"/>
+            <unit id="de.sebthom.eclipse.open_with_eclipse.feature.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
