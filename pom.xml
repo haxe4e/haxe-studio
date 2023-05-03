@@ -241,7 +241,7 @@
 
                <!-- https://www.eclipse.org/justj/?page=documentation#products -->
                <!-- major version must match the one selected in build.target file -->
-               <executionEnvironment>org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped-19</executionEnvironment>
+               <executionEnvironment>org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped-20</executionEnvironment>
 
                <target>
                   <file>../build.target</file>
