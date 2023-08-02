@@ -38,7 +38,7 @@
 
    <properties>
       <java.version>17</java.version>
-      <tycho.version>3.0.5</tycho.version>
+      <tycho.version>4.0.1</tycho.version>
 
       <!-- to prevent:
       [ERROR] Failed to execute goal com.hubspot.maven.plugins:dependency-scope-maven-plugin:0.10:check (check@validate) on project org.haxe4e:
@@ -92,12 +92,11 @@
 
             <plugin>
                <groupId>org.eclipse.tycho</groupId>
-               <artifactId>tycho-ds-plugin</artifactId>
+               <artifactId>tycho-bnd-plugin</artifactId>
                <version>${tycho.version}</version>
             </plugin>
-
             <plugin>
-               <!-- https://www.eclipse.org/tycho/sitedocs/tycho-compiler-plugin/plugin-info.html -->
+               <!-- https://tycho.eclipseprojects.io/doc/latest/tycho-compiler-plugin/plugin-info.html -->
                <groupId>org.eclipse.tycho</groupId>
                <artifactId>tycho-compiler-plugin</artifactId>
                <version>${tycho.version}</version>
@@ -106,7 +105,12 @@
                </configuration>
             </plugin>
             <plugin>
-               <!-- https://www.eclipse.org/tycho/sitedocs/tycho-packaging-plugin/plugin-info.html -->
+               <groupId>org.eclipse.tycho</groupId>
+               <artifactId>tycho-ds-plugin</artifactId>
+               <version>${tycho.version}</version>
+            </plugin>
+            <plugin>
+               <!-- https://tycho.eclipseprojects.io/doc/latest/tycho-packaging-plugin/plugin-info.html -->
                <groupId>org.eclipse.tycho</groupId>
                <artifactId>tycho-packaging-plugin</artifactId>
                <version>${tycho.version}</version>
@@ -117,20 +121,20 @@
                </configuration>
             </plugin>
             <plugin>
-               <!-- https://www.eclipse.org/tycho/sitedocs/tycho-p2/tycho-p2-plugin/plugin-info.html -->
+               <!-- https://tycho.eclipseprojects.io/doc/latest/tycho-p2-plugin/plugin-info.html -->
                <groupId>org.eclipse.tycho</groupId>
                <artifactId>tycho-p2-plugin</artifactId>
                <version>${tycho.version}</version>
             </plugin>
             <plugin>
-               <!-- https://www.eclipse.org/tycho/sitedocs/tycho-surefire-plugin/plugin-info.html -->
+               <!-- https://tycho.eclipseprojects.io/doc/latest/tycho-surefire-plugin/plugin-info.html -->
                <groupId>org.eclipse.tycho</groupId>
                <artifactId>tycho-surefire-plugin</artifactId>
                <version>${tycho.version}</version>
             </plugin>
             <plugin>
                <!--
-                 https://www.eclipse.org/tycho/sitedocs/tycho-release/tycho-versions-plugin/plugin-info.html
+                 https://tycho.eclipseprojects.io/doc/latest/tycho-versions-plugin/plugin-info.html
                  mvn -Dtycho.mode=maven tycho-versions:update-eclipse-metadata
                -->
                <groupId>org.eclipse.tycho</groupId>
@@ -180,7 +184,6 @@
                               <artifactId>tycho-packaging-plugin</artifactId>
                               <versionRange>[1.0,)</versionRange>
                               <goals>
-                                 <goal>build-qualifier</goal>
                                  <goal>build-qualifier-aggregator</goal>
                                  <goal>validate-id</goal>
                                  <goal>validate-version</goal>
@@ -232,7 +235,7 @@
             <extensions>true</extensions>
          </plugin>
          <plugin>
-            <!-- https://www.eclipse.org/tycho/sitedocs/target-platform-configuration/target-platform-configuration-mojo.html -->
+            <!-- https://tycho.eclipseprojects.io/doc/latest/target-platform-configuration/target-platform-mojo.html -->
             <groupId>org.eclipse.tycho</groupId>
             <artifactId>target-platform-configuration</artifactId>
             <version>${tycho.version}</version>
