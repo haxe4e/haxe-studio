@@ -14,7 +14,7 @@
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/releases/2023-06/"/>
+            <repository location="https://download.eclipse.org/releases/2023-09/"/>
             <unit id="org.eclipse.egit.feature.group" version="0.0.0"/>
             <unit id="org.eclipse.egit.gitflow.feature.feature.group" version="0.0.0"/>
             <unit id="org.eclipse.jgit.feature.group" version="0.0.0"/>
@@ -25,14 +25,14 @@
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/eclipse/updates/4.28/"/>
+            <repository location="https://download.eclipse.org/eclipse/updates/4.29/"/>
             <unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0"/>
             <unit id="org.eclipse.sdk.ide" version="0.0.0"/>
         </location>
 
-        <!-- compatible with 2023-06 see https://download.eclipse.org/tools/orbit/downloads
+        <!-- compatible with 2023-09 see https://download.eclipse.org/tools/orbit/downloads
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20230531010532/repository"/>
+            <repository location="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2023-09/"/>
         </location>-->
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
