@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
    SPDX-FileCopyrightText: © Haxe4E authors
    SPDX-FileContributor: Sebastian Thomschke
@@ -16,25 +16,54 @@
       <version>3.0.18</version>
    </parent>
 
-   <name>haxe4e-studio-parent</name>
    <groupId>org.haxe4e.studio</groupId>
    <artifactId>org.haxe4e.studio.parent</artifactId>
    <version>1.0.0-SNAPSHOT</version>
    <packaging>pom</packaging>
 
+
+   <name>haxe4e-studio-parent</name>
+   <inceptionYear>2021</inceptionYear>
    <organization>
       <name>The Haxe4E Project</name>
       <url>https://github.com/haxe4e</url>
    </organization>
-
-   <inceptionYear>2021</inceptionYear>
    <licenses>
       <license>
          <name>Eclipse Public License 2.0</name>
-         <url>https://spdx.org/licenses/EPL-2.0.html</url>
          <distribution>repo</distribution>
+         <url>https://spdx.org/licenses/EPL-2.0</url>
       </license>
    </licenses>
+
+
+   <modules>
+      <module>plugin</module>
+      <module>feature</module>
+      <module>product</module>
+   </modules>
+
+
+   <scm>
+      <!-- https://maven.apache.org/scm/git.html -->
+      <url>https://github.com/haxe4e/haxe4e-studio</url>
+      <connection>scm:git:https://github.com/haxe4e/haxe4e-studio.git</connection>
+      <developerConnection>scm:git:https://github.com/haxe4e/haxe4e-studio.git</developerConnection>
+      <tag>HEAD</tag>
+   </scm>
+
+
+   <issueManagement>
+      <system>github.com</system>
+      <url>https://github.com/haxe4e/haxe4e-studio/issues</url>
+   </issueManagement>
+
+
+   <ciManagement>
+      <system>github.com</system>
+      <url>https://github.com/haxe4e/haxe4e-studio/actions</url>
+   </ciManagement>
+
 
    <properties>
       <java.version>17</java.version>
@@ -58,27 +87,6 @@
       <skip.enforcer.enforce-bytecode-version>true</skip.enforcer.enforce-bytecode-version>
    </properties>
 
-   <modules>
-      <module>plugin</module>
-      <module>feature</module>
-      <module>product</module>
-   </modules>
-
-   <scm>
-      <url>https://github.com/haxe4e/haxe4e-studio</url>
-      <connection>scm:git:https://github.com/haxe4e/haxe4e-studio.git</connection>
-      <developerConnection>scm:git:https://github.com/haxe4e/haxe4e-studio.git</developerConnection>
-   </scm>
-
-   <issueManagement>
-      <system>github.com</system>
-      <url>https://github.com/haxe4e/haxe4e-studio/issues</url>
-   </issueManagement>
-
-   <ciManagement>
-      <system>github.com</system>
-      <url>https://github.com/haxe4e/haxe4e-studio/actions</url>
-   </ciManagement>
 
    <build>
       <pluginManagement>
@@ -105,6 +113,7 @@
                </configuration>
             </plugin>
             <plugin>
+               <!-- https://github.com/eclipse-tycho/tycho/blob/master/RELEASE_NOTES.md#support-for-pde-declarative-component-annotation-processing -->
                <groupId>org.eclipse.tycho</groupId>
                <artifactId>tycho-ds-plugin</artifactId>
                <version>${tycho.version}</version>
@@ -208,17 +217,17 @@
                            </action>
                         </pluginExecution>
                         <pluginExecution>
-                            <pluginExecutionFilter>
-                                <groupId>org.eclipse.tycho</groupId>
-                                <artifactId>target-platform-configuration</artifactId>
-                                <versionRange>[1.0,)</versionRange>
-                                <goals>
-                                    <goal>target-platform</goal>
-                                </goals>
-                            </pluginExecutionFilter>
-                            <action>
-                                <ignore />
-                            </action>
+                           <pluginExecutionFilter>
+                              <groupId>org.eclipse.tycho</groupId>
+                              <artifactId>target-platform-configuration</artifactId>
+                              <versionRange>[1.0,)</versionRange>
+                              <goals>
+                                 <goal>target-platform</goal>
+                              </goals>
+                           </pluginExecutionFilter>
+                           <action>
+                              <ignore />
+                           </action>
                         </pluginExecution>
                      </pluginExecutions>
                   </lifecycleMappingMetadata>
@@ -288,4 +297,30 @@
          </plugin>
       </plugins>
    </build>
+
+   <profiles>
+      <profile>
+         <id>disable-tycho-packaging-plugin-if-executed-in-eclipse</id>
+         <activation>
+            <property>
+               <name>eclipse.application</name>
+            </property>
+         </activation>
+         <build>
+            <plugins>
+               <plugin>
+                  <!-- disable building of a new jar on each file change from within Eclipse -->
+                  <groupId>org.eclipse.tycho</groupId>
+                  <artifactId>tycho-packaging-plugin</artifactId>
+                  <executions>
+                     <execution>
+                        <id>default-package-plugin</id>
+                        <phase>none</phase>
+                     </execution>
+                  </executions>
+               </plugin>
+            </plugins>
+         </build>
+      </profile>
+   </profiles>
 </project>

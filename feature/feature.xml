@@ -50,44 +50,29 @@
       <import plugin="org.eclipse.jface.text"/>
       <import plugin="org.eclipse.osgi"/>
       <import plugin="org.eclipse.ui.workbench.texteditor"/>
-      <import plugin="org.eclipse.platform" version="4.28.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.platform" version="4.29.0" match="greaterOrEqual"/>
       <import plugin="org.apache.commons.commons-io" version="2.11.0" match="compatible"/>
       <import plugin="org.apache.commons.lang3" version="3.12.0" match="compatible"/>
    </requires>
 
    <plugin
          id="org.haxe4e.studio.plugin"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="de.sebthom.eclipse.commons"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="net.sf.jstuff.core"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.apache.commons.lang3"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.apache.commons.commons-io"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="0.0.0"/>
 
 </feature>
