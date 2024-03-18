@@ -9,7 +9,7 @@
          Haxe Studio - Eclipse based Haxe IDE
 https://github.com/haxe4e/haxe-studio
 
-Copyright 2021-2023 by the Haxe4E authors. All rights reserved. Eclipse and the Eclipse logo are trademarks of the Eclipse Foundation, Inc., https://www.eclipse.org/. Oracle and Java are trademarks or registered trademarks of Oracle and/or its affiliates. Other names may be trademarks of their respective owners.
+Copyright 2021-2024 by the Haxe4E authors. All rights reserved. Eclipse and the Eclipse logo are trademarks of the Eclipse Foundation, Inc., https://www.eclipse.org/. Oracle and Java are trademarks or registered trademarks of Oracle and/or its affiliates. Other names may be trademarks of their respective owners.
 
 This product includes software developed by other open source projects including the Eclipse Foundation, Inc., https://www.eclipse.org/ and Apache Software Foundation, https://www.apache.org/.
       </text>
@@ -360,7 +360,7 @@ version(s), and exceptions or additional permissions here}.&quot;
       <feature id="org.eclipse.jgit.http.apache" installMode="root"/>
       <feature id="org.eclipse.jgit.ssh.apache" installMode="root"/>
       <feature id="org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped" installMode="root"/>
-      <feature id="org.eclipse.mylyn.wikitext.editors_feature" installMode="root"/>
+      <feature id="org.eclipse.mylyn.wikitext.feature" installMode="root"/>
       <feature id="org.eclipse.shellwax.feature" installMode="root"/>
       <feature id="org.eclipse.tm.terminal.connector.local.feature" installMode="root"/>
       <feature id="org.eclipse.tm.terminal.connector.ssh.feature" installMode="root"/>

@@ -53,7 +53,8 @@ echo "Determining PortalApps.com Launcher version..."
 launcher_version=$(curl -sSf "https://portableapps.com/apps/development/portableapps.com_launcher" | LC_ALL=en_US.utf8 grep -oP 'href="/downloading/.*\K(\d+\.\d+\.\d+)')
 
 echo "Downloading PortalApps.com Launcher $launcher_version..."
-curl -sSfL 'https://portableapps.com/redirect/?a=PortableApps.comLauncher&s=s&d=pa&f=PortableApps.comLauncher_2.2.3.paf.exe' -o target/launcher.paf.exe
+# https://portableapps.com/apps/development/portableapps.com_launcher
+curl -sSfL 'https://portableapps.com/redirect/?a=PortableApps.comLauncher&s=s&d=pa&f=PortableApps.comLauncher_2.2.6.paf.exe' -o target/launcher.paf.exe
 7z x target/launcher.paf.exe -otarget/launcher -y
 
 echo "Generating HaxeStudio launcher exe..."

@@ -50,7 +50,7 @@
       <import plugin="org.eclipse.jface.text"/>
       <import plugin="org.eclipse.osgi"/>
       <import plugin="org.eclipse.ui.workbench.texteditor"/>
-      <import plugin="org.eclipse.platform" version="4.29.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.platform" version="4.31.0" match="greaterOrEqual"/>
       <import plugin="org.apache.commons.commons-io" version="2.11.0" match="compatible"/>
       <import plugin="org.apache.commons.lang3" version="3.12.0" match="compatible"/>
    </requires>

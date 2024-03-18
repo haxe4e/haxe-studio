@@ -8,7 +8,7 @@ Automatic-Module-Name: org.haxe4e.studio.plugin
 Bundle-Activator: org.haxe4e.studio.HaxeStudioPlugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ClassPath: .
-Require-Bundle: org.eclipse.platform;bundle-version="4.29.0",
+Require-Bundle: org.eclipse.platform;bundle-version="4.31.0",
  org.eclipse.core.contenttype,
  org.eclipse.core.externaltools,
  org.eclipse.core.runtime,
