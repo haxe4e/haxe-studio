@@ -26,6 +26,7 @@ It has the following plugins pre-installed:
 - [EGit](https://www.eclipse.org/egit/) - Git support
 - [Easy Shell](https://anb0s.github.io/EasyShell/) - opens shell windows or file managers from the popup menu in the navigation tree
 - [Eclipse Copy Shortcut Lines](https://github.com/achimmihca/EclipseLineShortcuts) - cut/copy a complete line or the selected text depending on the selection
+- [Eclipse TM4E Language Pack](https://github.com/eclipse/tm4e/tree/main/org.eclipse.tm4e.language_pack) - syntax highlighting for popular languages
 - [Extra Syntax Highlighting](https://github.com/sebthom/extra-syntax-highlighting-eclipse-plugin) - syntax highlighting for additional languages
 - [Find/Replace View](https://github.com/sebthom/findview-eclipse-plugin) - Convenient view to find/replace within the active editor
 - [Indent Guide](https://github.com/grosenberg/IndentGuide) - Adds 'Indent Guide' (vertical line on indentation columns) to text editor
