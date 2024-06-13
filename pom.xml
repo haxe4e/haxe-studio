@@ -88,6 +88,24 @@
    </properties>
 
 
+   <dependencies>
+      <dependency>
+         <groupId>com.vegardit.no-npe</groupId>
+         <artifactId>no-npe-eea-all</artifactId>
+         <version>[1.0.0,)</version>
+         <scope>provided</scope>
+      </dependency>
+   </dependencies>
+   <repositories>
+      <repository>
+         <id>no-npe-snapshots</id>
+         <url>https://raw.githubusercontent.com/vegardit/no-npe/mvn-snapshots-repo/</url>
+         <releases><enabled>false</enabled></releases>
+         <snapshots><enabled>true</enabled></snapshots>
+      </repository>
+   </repositories>
+
+
    <build>
       <pluginManagement>
          <plugins>
@@ -110,6 +128,13 @@
                <version>${tycho.version}</version>
                <configuration>
                   <optimize>true</optimize>
+                  <compilerArgs>
+                     <arg>-annotationpath</arg>
+                     <arg>CLASSPATH</arg> <!-- read Eclipse External null Annotations from JARs on the classpath -->
+                  </compilerArgs>
+
+                  <!-- respect settings in .settings/org.eclipse.jdt.core.prefs -->
+                  <useProjectSettings>true</useProjectSettings>
                </configuration>
             </plugin>
             <plugin>
@@ -175,17 +200,17 @@
                   <lifecycleMappingMetadata>
                      <pluginExecutions>
                         <pluginExecution>
-                            <pluginExecutionFilter>
-                                <groupId>org.apache.maven.plugins</groupId>
-                                <artifactId>maven-clean-plugin</artifactId>
-                                <versionRange>[1.0,)</versionRange>
-                                <goals>
-                                    <goal>clean</goal>
-                                </goals>
-                            </pluginExecutionFilter>
-                            <action>
-                                <ignore />
-                            </action>
+                           <pluginExecutionFilter>
+                              <groupId>org.apache.maven.plugins</groupId>
+                              <artifactId>maven-clean-plugin</artifactId>
+                              <versionRange>[1.0,)</versionRange>
+                              <goals>
+                                 <goal>clean</goal>
+                              </goals>
+                           </pluginExecutionFilter>
+                           <action>
+                              <ignore />
+                           </action>
                         </pluginExecution>
                         <pluginExecution>
                            <pluginExecutionFilter>
@@ -256,7 +281,7 @@
                <executionEnvironment>org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped-22</executionEnvironment>
 
                <target>
-                  <file>../build.target</file>
+                  <file>${maven.multiModuleProjectDirectory}/build.target</file>
                </target>
                <environments>
                   <environment>
