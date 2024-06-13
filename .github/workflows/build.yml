@@ -42,7 +42,7 @@ env:
 jobs:
 
   ###########################################################
-  build:
+  maven-build:
   ###########################################################
     runs-on: windows-latest
 
@@ -51,7 +51,13 @@ jobs:
       cancel-in-progress: ${{ github.event_name == 'repository_dispatch' }}
 
     steps:
-    - name: Show environment variables
+    - name: "Show: GitHub context"
+      env:
+        GITHUB_CONTEXT: ${{ toJSON(github) }}
+      run: echo $GITHUB_CONTEXT
+
+
+    - name: "Show: environment variables"
       run: env | sort
 
 
@@ -59,32 +65,44 @@ jobs:
       uses: actions/checkout@v4  # https://github.com/actions/checkout
 
 
-    - name: "Install: JDK ${{ env.JAVA_VERSION }}"
+    - name: "Install: JDK ${{ env.JAVA_VERSION }} ☕"
       uses: actions/setup-java@v4  # https://github.com/actions/setup-java
       with:
         distribution: temurin
         java-version: ${{ env.JAVA_VERSION }}
 
 
-    - name: "Cache: Restore"
-      id: cache-restore
-      if: ${{ !env.ACT }} # https://github.com/nektos/act#skipping-steps
-      uses: actions/cache/restore@v4
+    - name: "Cache: Local Maven Repository"
+      uses: actions/cache@v4
+      with:
+        # Excluded sub directory not working https://github.com/actions/toolkit/issues/713
+        path: |
+          ~/.m2/repository/*
+          !~/.m2/repository/com/vegardit/no-npe
+          !~/.m2/repository/.cache/tycho
+          !~/.m2/repository/.meta/p2-artifacts.properties
+          !~/.m2/repository/p2
+          !~/.m2/repository/*SNAPSHOT*
+        key: ${{ runner.os }}-repo-mvn-${{ hashFiles('**/pom.xml') }}
+
+
+    - name: "Cache: Local Tycho Repository"
+      uses: actions/cache@v4
       with:
         path: |
-          ~/.m2/repository
-          !~/.m2/repository/.cache/tycho/https/raw.githubusercontent.com
-          !~/.m2/repository/*SNAPSHOT*
-        key: ${{ runner.os }}-${{ hashFiles('build.target') }}-${{ hashFiles('**/pom.xml') }}
+          ~/.m2/repository/.cache/tycho
+          ~/.m2/repository/.meta/p2-artifacts.properties
+          ~/.m2/repository/p2
+        key: ${{ runner.os }}-repo-tycho-${{ hashFiles('build.target') }}
 
 
     - name: "Install: Maven"
       uses: stCarolas/setup-maven@v5  # https://github.com/stCarolas/setup-maven
       with:
-        maven-version: 3.9.6
+        maven-version: 3.9.7
 
 
-    - name: Build with Maven
+    - name: "Build with Maven 🔨"
       id: maven-build
       env:
         GITHUB_USER: ${{ github.actor }}
@@ -97,12 +115,11 @@ jobs:
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
         MAVEN_OPTS="${MAVEN_OPTS:-}"
-        MAVEN_OPTS="$MAVEN_OPTS -XX:+TieredCompilation -XX:TieredStopAtLevel=1" # https://zeroturnaround.com/rebellabs/your-maven-build-is-slow-speed-it-up/
-        MAVEN_OPTS="$MAVEN_OPTS -Djava.security.egd=file:/dev/./urandom" # https://stackoverflow.com/questions/58991966/what-java-security-egd-option-is-for/59097932#59097932
-        MAVEN_OPTS="$MAVEN_OPTS -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss,SSS" # https://stackoverflow.com/questions/5120470/how-to-time-the-different-stages-of-maven-execution/49494561#49494561
-        MAVEN_OPTS="$MAVEN_OPTS -Xmx1024m -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true -Dhttps.protocols=TLSv1.2"
-        echo "  -> MAVEN_OPTS: $MAVEN_OPTS"
+        MAVEN_OPTS+=" -Djava.security.egd=file:/dev/./urandom" # https://stackoverflow.com/questions/58991966/what-java-security-egd-option-is-for/59097932#59097932
+        MAVEN_OPTS+=" -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss,SSS" # https://stackoverflow.com/questions/5120470/how-to-time-the-different-stages-of-maven-execution/49494561#49494561
+        MAVEN_OPTS+=" -Xmx1024m -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true -Dhttps.protocols=TLSv1.3,TLSv1.2"
         export MAVEN_OPTS
+        echo "MAVEN_OPTS: $MAVEN_OPTS"
 
         mvn \
           --errors \
@@ -200,33 +217,10 @@ jobs:
         git push origin updatesite --force
 
 
-    ##################################################
-    # Cache Update
-    # See https://github.com/actions/cache/issues/342
-    ##################################################
-    - name: "Cache: Delete Previous"
-      if: ${{ steps.cache-restore.outputs.cache-hit && !env.ACT }}
-      env:
-        GH_TOKEN: ${{ github.token }}
-      run: |
-        gh extension install actions/gh-actions-cache
-        gh actions-cache delete ${{ steps.cache-restore.outputs.cache-primary-key }} --confirm || true
-
-    - name: "Cache: Update"
-      uses: actions/cache/save@v4
-      if: ${{ always() && !cancelled() && !env.ACT }} # save cache even fails
-      with:
-        path: |
-          ~/.m2/repository
-          !~/.m2/repository/.cache/tycho/https/raw.githubusercontent.com
-          !~/.m2/repository/*SNAPSHOT*
-        key: ${{ steps.cache-restore.outputs.cache-primary-key }}
-
-
   ###########################################################
   dependabot-pr-auto-merge:
   ###########################################################
-    needs: build
+    needs: maven-build
     if: ${{ github.event_name == 'pull_request' && github.actor == 'dependabot[bot]' }}
     runs-on: ubuntu-latest
 
