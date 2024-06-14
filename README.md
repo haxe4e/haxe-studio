@@ -42,10 +42,10 @@ It has the following plugins pre-installed:
 
 You can download the latest platform-specific releases from here:
 
-- Linux: https://github.com/haxe4e/haxe-studio/releases/download/latest/org.haxe4e.studio-linux.gtk.x86_64.tar.gz
-- MacOS: https://github.com/haxe4e/haxe-studio/releases/download/latest/org.haxe4e.studio-macosx.cocoa.x86_64.tar.gz
-- Windows: https://github.com/haxe4e/haxe-studio/releases/download/latest/org.haxe4e.studio-win.x86_64.zip
-- Windows Portable App: https://github.com/haxe4e/haxe-studio/releases/download/latest/HaxeStudioPortable.paf.exe
+- Linux: https://github.com/haxe4e/haxe-studio/releases/download/stable/org.haxe4e.studio-linux.gtk.x86_64.tar.gz
+- MacOS: https://github.com/haxe4e/haxe-studio/releases/download/stable/org.haxe4e.studio-macosx.cocoa.x86_64.tar.gz
+- Windows: https://github.com/haxe4e/haxe-studio/releases/download/stable/org.haxe4e.studio-win.x86_64.zip
+- Windows Portable App: https://github.com/haxe4e/haxe-studio/releases/download/stable/HaxeStudioPortable.paf.exe
 
 
 ## <a name="usage"></a>Usage

@@ -47,7 +47,7 @@ jobs:
     runs-on: windows-latest
 
     concurrency:
-      group: ci-${{ github.ref }}
+      group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: ${{ github.event_name == 'repository_dispatch' }}
 
     steps:
@@ -144,26 +144,43 @@ jobs:
         bash product/build-paf.sh
 
 
-    - name: "Delete previous 'latest' release"
-      if: ${{ github.ref_name == 'main' && !env.ACT }}
+    - name: "Determine release name"
+      id: release
+      if: ${{ !env.ACT }}
+      run: |
+        case "$GITHUB_REF_NAME" in
+          main)
+            echo "name=preview" >>"$GITHUB_OUTPUT"
+            echo "updatesite_branch=updatesite-preview" >>"$GITHUB_OUTPUT"
+            ;;
+          release)
+            echo "name=stable" >>"$GITHUB_OUTPUT"
+            echo "updatesite_branch=updatesite" >>"$GITHUB_OUTPUT"
+            ;;
+        esac
+
+
+    - name: "Delete previous '${{ steps.release.outputs.name }}' release"
+      if: ${{ steps.release.outputs.name != '' }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        RELEASE_NAME: latest
+        RELEASE_NAME: ${{ steps.release.outputs.name }}
       # https://cli.github.com/manual/gh_release_delete
       run: |
         GH_DEBUG=1 gh release delete "$RELEASE_NAME" --yes --cleanup-tag || true
 
 
-    - name: "Create 'latest' release"
-      if: ${{ github.ref_name == 'main' && !env.ACT }}
+    - name: "Create '${{ steps.release.outputs.name }}' release"
+      if: ${{ steps.release.outputs.name != '' }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        RELEASE_NAME: latest
+        RELEASE_NAME: ${{ steps.release.outputs.name }}
       # https://cli.github.com/manual/gh_release_create
       run: |
         GH_DEBUG=1 gh release create "$RELEASE_NAME" \
           --title "$RELEASE_NAME" \
-          --latest \
+          ${{ steps.release.outputs.name == 'stable' && '--latest' || '' }} \
+          ${{ steps.release.outputs.name == 'preview' && '--prerelease' || '' }} \
           --notes "${{ github.event.head_commit.message }}" \
           --target "${{ github.sha }}" \
           product/target/products/org.haxe4e.studio-linux.gtk.x86_64.tar.gz \
@@ -173,7 +190,9 @@ jobs:
 
 
     - name: Deploy p2 update site
-      if: ${{ github.ref_name == 'main' && !env.ACT }}
+      if: ${{ steps.release.outputs.name != '' }}
+      env:
+        BRANCH_NAME: ${{ steps.release.outputs.updatesite_branch }}
       run: |
         set -eux
 
@@ -181,8 +200,8 @@ jobs:
 
         cd /tmp
         github_repo_url="https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}"
-        if curl --output /dev/null --silent --head --fail "$github_repo_url/tree/updatesite"; then
-          git clone $github_repo_url --single-branch --branch updatesite updatesite
+        if curl --output /dev/null --silent --head --fail "$github_repo_url/tree/$BRANCH_NAME"; then
+          git clone $github_repo_url --single-branch --branch "$BRANCH_NAME" updatesite
           cd updatesite
           # https://github.community/t/github-actions-bot-email-address/17204
           git config user.name "github-actions[bot]"
@@ -191,7 +210,7 @@ jobs:
         else
           git clone $github_repo_url updatesite
           cd updatesite
-          git checkout --orphan updatesite
+          git checkout --orphan "$BRANCH_NAME"
           git rm -rf .
           cat <<EOF > index.html
             <!DOCTYPE html>
@@ -214,7 +233,7 @@ jobs:
         mv $(cygpath $GITHUB_WORKSPACE)/product/target/repository/* .
         git add --all
         git commit -am "$last_commit_message"
-        git push origin updatesite --force
+        git push origin "$BRANCH_NAME" --force
 
 
   ###########################################################
