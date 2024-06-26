@@ -15,7 +15,6 @@ import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.debug.ui.ILaunchShortcut;
-import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.window.Window;
@@ -42,11 +41,8 @@ public class RunExternalProgramShortcut implements ILaunchShortcut {
 
    @Override
    public void launch(final ISelection selection, final String mode) {
-      if (selection instanceof final IStructuredSelection sel) {
-         final var firstElement = sel.getFirstElement();
-         if (firstElement instanceof @NonNull final IFile file) {
-            launchExternalProgram(file, mode);
-         }
+      if (((IStructuredSelection) selection).getFirstElement() instanceof final IFile file) {
+         launchExternalProgram(file, mode);
       }
    }
 
