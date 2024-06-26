@@ -120,6 +120,12 @@
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+            <!-- Open with Eclipse https://github.com/sebthom/previewer-eclipse-plugin -->
+            <repository location="https://raw.githubusercontent.com/sebthom/previewer-eclipse-plugin/updatesite"/>
+            <unit id="de.sebthom.eclipse.previewer.feature.feature.group" version="0.0.0"/>
+        </location>
+
+        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
             <!-- Indent Guide https://github.com/grosenberg/IndentGuide -->
             <repository location="https://www.certiv.net/updates"/>
             <unit id="net.certiv.tools.indentguide.feature.feature.group" version="0.0.0"/>
