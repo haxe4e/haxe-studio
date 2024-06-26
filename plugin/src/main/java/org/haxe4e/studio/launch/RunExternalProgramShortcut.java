@@ -42,8 +42,8 @@ public class RunExternalProgramShortcut implements ILaunchShortcut {
 
    @Override
    public void launch(final ISelection selection, final String mode) {
-      if (selection instanceof IStructuredSelection) {
-         final var firstElement = ((IStructuredSelection) selection).getFirstElement();
+      if (selection instanceof final IStructuredSelection sel) {
+         final var firstElement = sel.getFirstElement();
          if (firstElement instanceof @NonNull final IFile file) {
             launchExternalProgram(file, mode);
          }
@@ -61,7 +61,7 @@ public class RunExternalProgramShortcut implements ILaunchShortcut {
          // use an existing launch config if available
          for (final ILaunchConfiguration cfg : launchMgr.getLaunchConfigurations(launchConfigType)) {
             if (cfg.getAttribute(IExternalToolConstants.ATTR_LOCATION, "").equals(location) //
-               && cfg.getAttribute(IExternalToolConstants.ATTR_WORKING_DIRECTORY, "").equals(workDir) //
+                  && cfg.getAttribute(IExternalToolConstants.ATTR_WORKING_DIRECTORY, "").equals(workDir) //
             ) {
                DebugUITools.launch(cfg, mode);
                return;
@@ -70,7 +70,7 @@ public class RunExternalProgramShortcut implements ILaunchShortcut {
 
          // create a new launch config
          final var newLaunchConfig = launchConfigType.newInstance(null, launchMgr.generateLaunchConfigurationName(project.getName() + " ("
-            + programFile.getName() + ")"));
+               + programFile.getName() + ")"));
          newLaunchConfig.setAttribute(IExternalToolConstants.ATTR_LOCATION, location);
          newLaunchConfig.setAttribute(IExternalToolConstants.ATTR_WORKING_DIRECTORY, workDir);
 
