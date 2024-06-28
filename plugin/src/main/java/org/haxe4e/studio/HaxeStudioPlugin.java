@@ -6,8 +6,6 @@
  */
 package org.haxe4e.studio;
 
-import static net.sf.jstuff.core.validation.NullAnalysisHelper.asNonNullUnsafe;
-
 import org.eclipse.jdt.annotation.Nullable;
 import org.osgi.framework.BundleContext;
 
@@ -28,8 +26,7 @@ public class HaxeStudioPlugin extends AbstractEclipsePlugin {
     * @return the shared instance
     */
    public static HaxeStudioPlugin get() {
-      Assert.notNull(instance, "Default plugin instance is still null.");
-      return asNonNullUnsafe(instance);
+      return Assert.notNull(instance, "Default plugin instance is still null.");
    }
 
    public static PluginLogger log() {
