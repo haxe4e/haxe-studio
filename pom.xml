@@ -67,7 +67,7 @@
 
    <properties>
       <java.version>17</java.version>
-      <tycho.version>4.0.8</tycho.version>
+      <tycho.version>4.0.9</tycho.version>
 
       <!-- to prevent:
       [ERROR] Failed to execute goal com.hubspot.maven.plugins:dependency-scope-maven-plugin:0.10:check (check@validate) on project org.haxe4e:
