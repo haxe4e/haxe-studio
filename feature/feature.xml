@@ -31,7 +31,7 @@
    </url>
 
    <requires>
-      <import plugin="org.eclipse.platform" version="4.32.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.platform" version="4.33.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.contenttype"/>
       <import plugin="org.eclipse.core.externaltools"/>
       <import plugin="org.eclipse.core.filebuffers"/>
@@ -52,7 +52,7 @@
       <import plugin="org.eclipse.ui.workbench.texteditor"/>
       <import plugin="org.apache.commons.commons-io" version="2.16.1" match="compatible"/>
       <import plugin="org.apache.commons.lang3" version="3.12.0" match="compatible"/>
-      <import plugin="net.sf.jstuff.core" version="7.12.0" match="compatible"/>
+      <import plugin="net.sf.jstuff.core" version="7.13.0" match="compatible"/>
    </requires>
 
    <plugin
