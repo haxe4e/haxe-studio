@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/haxe4e/haxe-studio/actions/workflows/build.yml/badge.svg)](https://github.com/haxe4e/haxe-studio/actions/workflows/build.yml)
 [![License](https://img.shields.io/github/license/haxe4e/haxe-studio.svg?color=blue)](LICENSE.txt)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.1%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
 
 **Feedback and high-quality pull requests are  highly welcome!**
