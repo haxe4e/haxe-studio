@@ -96,12 +96,6 @@ jobs:
         key: ${{ runner.os }}-repo-tycho-${{ hashFiles('build.target') }}
 
 
-    - name: "Install: Maven"
-      uses: stCarolas/setup-maven@v5  # https://github.com/stCarolas/setup-maven
-      with:
-        maven-version: 3.9.9
-
-
     - name: "Build with Maven 🔨"
       id: maven-build
       env:
@@ -109,6 +103,11 @@ jobs:
         GITHUB_API_KEY: ${{ github.token }}
       run: |
         set -eu
+
+        #
+        # ensure mnvw is executable
+        #
+        chmod u+x ./mvnw
 
         # https://github.community/t/github-actions-bot-email-address/17204
         git config user.name "github-actions[bot]"
@@ -121,7 +120,7 @@ jobs:
         export MAVEN_OPTS
         echo "MAVEN_OPTS: $MAVEN_OPTS"
 
-        mvn \
+        ./mvnw \
           --errors \
           --update-snapshots \
           --batch-mode \
@@ -175,13 +174,14 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         RELEASE_NAME: ${{ steps.release.outputs.name }}
+        COMMIT_MSG: ${{ github.event.head_commit.message }} # https://stackoverflow.com/a/78420438/5116073
       # https://cli.github.com/manual/gh_release_create
       run: |
         GH_DEBUG=1 gh release create "$RELEASE_NAME" \
           --title "$RELEASE_NAME" \
           ${{ steps.release.outputs.name == 'stable' && '--latest' || '' }} \
           ${{ steps.release.outputs.name == 'preview' && '--prerelease' || '' }} \
-          --notes "${{ github.event.head_commit.message }}" \
+          --notes "$COMMIT_MSG" \
           --target "${{ github.sha }}" \
           product/target/products/org.haxe4e.studio-linux.gtk.x86_64.tar.gz \
           product/target/products/org.haxe4e.studio-macosx.cocoa.x86_64.tar.gz \

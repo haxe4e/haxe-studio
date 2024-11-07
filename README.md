@@ -67,27 +67,30 @@ Please check the [Wiki](https://github.com/haxe4e/haxe-studio/wiki)
 
 ## <a id="building"></a>Building from Sources
 
-To ensure reproducible builds this Maven project inherits from the [vegardit-maven-parent](https://github.com/vegardit/vegardit-maven-parent)
-project which declares fixed versions and sensible default settings for all official Maven plug-ins.
+To ensure reproducible builds, this [Maven](https://books.sonatype.com/mvnref-book/reference/index.html) project inherits from the
+[vegardit-maven-parent](https://github.com/vegardit/vegardit-maven-parent) project, which declares fixed versions and sensible
+default settings for all official Maven plugins.
 
-The project also uses the [maven-toolchains-plugin](http://maven.apache.org/plugins/maven-toolchains-plugin/) which decouples the JDK that is
-used to execute Maven and it's plug-ins from the target JDK that is used for compilation and/or unit testing. This ensures full binary
-compatibility of the compiled artifacts with the runtime library of the required target JDK.
+The project also uses the [maven-toolchains-plugin](http://maven.apache.org/plugins/maven-toolchains-plugin/), which decouples the
+JDK used to execute Maven and its plugins from the target JDK used for compilation and unit testing.
+This ensures full binary compatibility of the compiled artifacts with the runtime library of the required target JDK.
 
-To build the project follow these steps:
+To build the project, follow these steps:
 
-1. Download and install a Java 17 SDK, e.g. from:
-   - https://github.com/ojdkbuild/ojdkbuild
+1. **Install a Java 17 JDK**
+
+   Download and install a Java 17 SDK, e.g. from:
    - https://adoptium.net/releases.html?variant=openjdk17
-   - https://www.azul.com/downloads/?version=java-17-lts&architecture=x86-64-bit&package=jdk#download-openjdk
+   - https://www.azul.com/downloads/?version=java-17-lts&package=jdk#zulu
 
-1. Download and install the latest [Maven distribution](https://maven.apache.org/download.cgi).
+2. **Configure Maven Toolchains**
 
-1. In your user home directory create the file `.m2/toolchains.xml` with the following content:
+   In your user home directory, create the file `.m2/toolchains.xml` with the following content:
 
    ```xml
    <?xml version="1.0" encoding="UTF8"?>
-   <toolchains>
+   <toolchains xmlns="http://maven.apache.org/TOOLCHAINS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://maven.apache.org/TOOLCHAINS/1.1.0 https://maven.apache.org/xsd/toolchains-1.1.0.xsd">
       <toolchain>
          <type>jdk</type>
          <provides>
@@ -101,15 +104,18 @@ To build the project follow these steps:
    </toolchains>
    ```
 
-   Set the `[PATH_TO_YOUR_JDK_17]` parameter accordingly.
+   Replace `[PATH_TO_YOUR_JDK_17]` with the path to your JDK installation.
 
-1. Checkout the code using one of the following methods:
+3. **Clone the Repository**
 
-    - `git clone https://github.com/haxe4e/haxe-studio`
-    - `svn co https://github.com/haxe4e/haxe-studio haxe-studio`
+   ```bash
+   git clone https://github.com/haxe4e/haxe-studio.git
+   ```
 
-1. Run `mvn clean verify` in the project root directory. This will execute compilation, unit-testing, integration-testing and
-   packaging of all artifacts.
+4. **Build the Project**
+
+   Run `mvnw clean verify` in the project root directory.
+   This will execute compilation, unit testing, integration testing, and packaging of all artifacts.
 
 
 ## <a name="acknowledgement"></a>Acknowledgement
