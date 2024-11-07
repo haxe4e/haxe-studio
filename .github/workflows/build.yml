@@ -132,10 +132,40 @@ jobs:
           ${{ github.event.inputs.additional_maven_args }} \
           clean verify
 
-        python product/fix_exec_flag_in_archives.py
+        cd product/target/products
 
-        mv product/target/products/org.haxe4e.studio-win32.win32.x86_64.zip \
-           product/target/products/org.haxe4e.studio-win.x86_64.zip
+        # remove unused dynamic libs
+        rm -rf \
+          org.haxe4e.studio/linux/gtk/x86_64/plugins/com.sun.jna_*/com/sun/jna/{aix,darwin,freebsd,linux-a,linux-l,linux-m,linux-p,linux-r,linux-s,openbsd,sunos,win32}* \
+          org.haxe4e.studio/macosx/cocoa/x86_64/Eclipse.app/Contents/Eclipse/plugins/com.sun.jna_*/com/sun/jna/{aix,freebsd,linux,openbsd,sunos,win32}* \
+          org.haxe4e.studio/win32/win32/x86_64/plugins/com.sun.jna_*/com/sun/jna/{aix,darwin,freebsd,linux,openbsd,sunos}*
+
+        # generate linux x86_64 archive
+        (
+          cd org.haxe4e.studio/linux/gtk/x86_64; 
+          tar -cf ../../../../org.haxe4e.studio-linux.gtk.x86_64.tar --exclude='HaxeStudio' --exclude='plugins/org.eclipse.justj.*/jre/bin' *;
+          tar --mode='+x' --append -f ../../../../org.haxe4e.studio-linux.gtk.x86_64.tar HaxeStudio plugins/org.eclipse.justj.*/jre/bin/*
+        )
+        gzip -9 org.haxe4e.studio-linux.gtk.x86_64.tar
+
+        # generate macos aarch64 archive
+        (
+          cd org.haxe4e.studio/macosx/cocoa/aarch64; 
+          tar -cf ../../../../org.haxe4e.studio-macosx.cocoa.aarch64.tar --exclude='Eclipse.app/Contents/MacOS/HaxeStudio' --exclude='Eclipse.app/Contents/Eclipse/plugins/org.eclipse.justj.*/jre/bin' *;
+          tar --mode='+x' --append -f ../../../../org.haxe4e.studio-macosx.cocoa.aarch64.tar Eclipse.app/Contents/MacOS/HaxeStudio Eclipse.app/Contents/Eclipse/plugins/org.eclipse.justj.*/jre/bin/*
+        )
+        gzip -9 org.haxe4e.studio-macosx.cocoa.aarch64.tar
+
+        # generate macos x86_64 archive
+        (
+          cd org.haxe4e.studio/macosx/cocoa/x86_64; 
+          tar -cf ../../../../org.haxe4e.studio-macosx.cocoa.x86_64.tar --exclude='Eclipse.app/Contents/MacOS/HaxeStudio' --exclude='Eclipse.app/Contents/Eclipse/plugins/org.eclipse.justj.*/jre/bin' *;
+          tar --mode='+x' --append -f ../../../../org.haxe4e.studio-macosx.cocoa.x86_64.tar Eclipse.app/Contents/MacOS/HaxeStudio Eclipse.app/Contents/Eclipse/plugins/org.eclipse.justj.*/jre/bin/*
+        )
+        gzip -9 org.haxe4e.studio-macosx.cocoa.x86_64.tar
+
+        # generate windows x86_64 archive
+        7z a -mx9 -tzip org.haxe4e.studio-win.x86_64.zip ./org.haxe4e.studio/win32/win32/x86_64/*
 
 
     - name: Generate PortableApps archive
@@ -184,6 +214,7 @@ jobs:
           --notes "$COMMIT_MSG" \
           --target "${{ github.sha }}" \
           product/target/products/org.haxe4e.studio-linux.gtk.x86_64.tar.gz \
+          product/target/products/org.haxe4e.studio-macosx.cocoa.aarch64.tar.gz \
           product/target/products/org.haxe4e.studio-macosx.cocoa.x86_64.tar.gz \
           product/target/products/org.haxe4e.studio-win.x86_64.zip \
           product/target/HaxeStudioPortable.paf.exe

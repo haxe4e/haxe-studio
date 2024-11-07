@@ -31,7 +31,10 @@
                   <id>create-product-distributions</id>
                   <goals>
                      <goal>materialize-products</goal>
-                     <goal>archive-products</goal>
+                     <!--
+                        we create the archives in the GHA workflow
+                        <goal>archive-products</goal>
+                     -->
                   </goals>
                </execution>
             </executions>
@@ -41,11 +44,11 @@
                      <id>org.haxe4e.studio</id>
                   </product>
                </products>
-               <formats>
+               <!--<formats>
                   <macosx>tar.gz</macosx>
                   <linux>tar.gz</linux>
                   <win32>zip</win32>
-               </formats>
+               </formats>-->
             </configuration>
          </plugin>
       </plugins>
