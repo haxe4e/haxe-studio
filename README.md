@@ -1,6 +1,6 @@
 # Haxe Studio - the Eclipse based Haxe IDE
 
-[![Build Status](https://github.com/haxe4e/haxe-studio/actions/workflows/build.yml/badge.svg)](https://github.com/haxe4e/haxe-studio/actions/workflows/build.yml)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/haxe4e/haxe-studio/build.yml?logo=github)](https://github.com/haxe4e/haxe-studio/actions/workflows/build.yml)
 [![License](https://img.shields.io/github/license/haxe4e/haxe-studio.svg?color=blue)](LICENSE.txt)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.1%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
@@ -17,8 +17,8 @@
 
 ## <a name="about"></a>About
 
-Haxe Studio is an [Eclipse](https://eclipse.org) based IDE for development using the [Haxe](https://haxe.org) general purpose
-programming language.
+Haxe Studio is an [Eclipse](https://eclipse.org) based IDE designed for development with the [Haxe](https://haxe.org) general
+purpose programming language.
 
 It has the following plugins pre-installed:
 - [haxe4e](https://github.com/haxe4e/haxe4e) - Haxe programming language support
@@ -29,7 +29,7 @@ It has the following plugins pre-installed:
 - [Eclipse TM4E Language Pack](https://github.com/eclipse/tm4e/tree/main/org.eclipse.tm4e.language_pack) - syntax highlighting for popular languages
 - [Extra Syntax Highlighting](https://github.com/sebthom/extra-syntax-highlighting-eclipse-plugin) - syntax highlighting for additional languages
 - [Find/Replace View](https://github.com/sebthom/findview-eclipse-plugin) - Convenient view to find/replace within the active editor
-- [Previewer](https://github.com/sebthom/previewer-eclipse-plugin) - Preview view to display rendered versions of Markdown, GraphViz, Mermaid, PlantUML files
+- [Previewer](https://github.com/sebthom/previewer-eclipse-plugin) - Preview view to display rendered versions of Draw.io, Markdown, GraphViz, Mermaid, PlantUML files
 - [Indent Guide](https://github.com/grosenberg/IndentGuide) - Adds 'Indent Guide' (vertical line on indentation columns) to text editor
 - [Open with Eclipse](https://github.com/sebthom/open-with-eclipse-plugin) - Windows File explorer context menu integration
 - [ShellWax](https://github.com/eclipse/shellwax) - Bash File Editor
