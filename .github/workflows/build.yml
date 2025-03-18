@@ -37,7 +37,7 @@ defaults:
     shell: bash
 
 env:
-  JAVA_VERSION: 17
+  JAVA_VERSION: 21
 
 jobs:
 
@@ -136,9 +136,9 @@ jobs:
 
         # remove unused dynamic libs
         rm -rf \
-          org.haxe4e.studio/linux/gtk/x86_64/plugins/com.sun.jna_*/com/sun/jna/{aix,darwin,freebsd,linux-a,linux-l,linux-m,linux-p,linux-r,linux-s,openbsd,sunos,win32}* \
-          org.haxe4e.studio/macosx/cocoa/x86_64/Eclipse.app/Contents/Eclipse/plugins/com.sun.jna_*/com/sun/jna/{aix,freebsd,linux,openbsd,sunos,win32}* \
-          org.haxe4e.studio/win32/win32/x86_64/plugins/com.sun.jna_*/com/sun/jna/{aix,darwin,freebsd,linux,openbsd,sunos}*
+          org.haxe4e.studio/linux/gtk/x86_64/plugins/com.sun.jna_*/com/sun/jna/{aix,darwin,dragonflybsd,freebsd,linux-a,linux-l,linux-m,linux-p,linux-r,linux-s,openbsd,sunos,win32}* \
+          org.haxe4e.studio/macosx/cocoa/x86_64/Eclipse.app/Contents/Eclipse/plugins/com.sun.jna_*/com/sun/jna/{aix,dragonflybsd,freebsd,linux,openbsd,sunos,win32}* \
+          org.haxe4e.studio/win32/win32/x86_64/plugins/com.sun.jna_*/com/sun/jna/{aix,darwin,dragonflybsd,freebsd,linux,openbsd,sunos}*
 
         # generate linux x86_64 archive
         (
