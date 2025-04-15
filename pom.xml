@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-   SPDX-FileCopyrightText: © Haxe4E authors
+   SPDX-FileCopyrightText: © The Haxe4E authors
    SPDX-FileContributor: Sebastian Thomschke
    SPDX-License-Identifier: EPL-2.0
-   SPDX-ArtifactOfProjectHomePage: https://github.com/haxe4e/haxe4e-studio
+   SPDX-ArtifactOfProjectHomePage: https://github.com/haxe4e/haxe-studio
 -->
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -13,7 +13,7 @@
    <parent>
       <groupId>com.vegardit.maven</groupId>
       <artifactId>vegardit-maven-parent</artifactId>
-      <version>6.1.8</version>
+      <version>6.1.9</version>
    </parent>
 
    <groupId>org.haxe4e.studio</groupId>
@@ -23,6 +23,7 @@
 
 
    <name>haxe4e-studio-parent</name>
+   <url>https://github.com/haxe4e/haxe-studio</url>
    <inceptionYear>2021</inceptionYear>
    <organization>
       <name>The Haxe4E Project</name>
@@ -46,28 +47,29 @@
 
    <scm>
       <!-- https://maven.apache.org/scm/git.html -->
-      <url>https://github.com/haxe4e/haxe4e-studio</url>
-      <connection>scm:git:https://github.com/haxe4e/haxe4e-studio.git</connection>
-      <developerConnection>scm:git:https://github.com/haxe4e/haxe4e-studio.git</developerConnection>
+      <url>https://github.com/haxe4e/haxe-studio</url>
+      <connection>scm:git:https://github.com/haxe4e/haxe-studio.git</connection>
+      <developerConnection>scm:git:https://github.com/haxe4e/haxe-studio.git</developerConnection>
       <tag>HEAD</tag>
    </scm>
 
 
    <issueManagement>
       <system>github.com</system>
-      <url>https://github.com/haxe4e/haxe4e-studio/issues</url>
+      <url>https://github.com/haxe4e/haxe-studio/issues</url>
    </issueManagement>
 
 
    <ciManagement>
       <system>github.com</system>
-      <url>https://github.com/haxe4e/haxe4e-studio/actions</url>
+      <url>https://github.com/haxe4e/haxe-studio/actions</url>
    </ciManagement>
 
 
    <properties>
       <java.version>21</java.version>
       <tycho.version>4.0.12</tycho.version>
+      <jgit.dirtyWorkingTree>error</jgit.dirtyWorkingTree>
 
       <!-- to prevent:
       [ERROR] Failed to execute goal com.hubspot.maven.plugins:dependency-scope-maven-plugin:0.10:check (check@validate) on project org.haxe4e:
@@ -150,9 +152,20 @@
                <version>${tycho.version}</version>
                <configuration>
                   <format>yyyyMMdd-HHmm</format>
+                  <timestampProvider>jgit</timestampProvider>
+                  <jgit.dirtyWorkingTree>${jgit.dirtyWorkingTree}</jgit.dirtyWorkingTree>
+                  <jgit.ignore>pom.xml</jgit.ignore>
+
                   <!-- replace SNAPSHOT version in the final product configuration -->
                   <finalName>${project.artifactId}_${unqualifiedVersion}.${buildQualifier}</finalName>
                </configuration>
+              <dependencies>
+                <dependency>
+                  <groupId>org.eclipse.tycho</groupId>
+                  <artifactId>tycho-buildtimestamp-jgit</artifactId>
+                  <version>${tycho.version}</version>
+                </dependency>
+              </dependencies>
             </plugin>
             <plugin>
                <!-- https://tycho.eclipseprojects.io/doc/latest/tycho-p2-plugin/plugin-info.html -->
@@ -329,6 +342,18 @@
    </build>
 
    <profiles>
+      <profile>
+        <!-- This profile prevents local maven builds from failing if uncommitted changes are present -->
+        <id>local-dev</id>
+        <activation>
+          <property>
+            <name>!env.CI</name>
+          </property>
+        </activation>
+        <properties>
+          <jgit.dirtyWorkingTree>warning</jgit.dirtyWorkingTree>
+        </properties>
+      </profile>
       <profile>
          <id>disable-tycho-packaging-plugin-if-executed-in-eclipse</id>
          <activation>
