@@ -22,7 +22,7 @@ if ! hash 7z 2>/dev/null; then
   exit 1
 fi
 
-cd $THIS_FILE_DIR
+cd "$THIS_FILE_DIR"
 
 echo "Cleaning..."
 rm -rf \
@@ -59,10 +59,10 @@ curl -sSfL "https://portableapps.com/redirect/?a=PortableApps.comLauncher&s=s&d=
 
 echo "Generating HaxeStudio launcher exe..."
 cd target/launcher
-./PortableApps.comLauncherGenerator.exe $(cygpath -w ../HaxeStudioPortable)
+./PortableApps.comLauncherGenerator.exe "$(cygpath -w ../HaxeStudioPortable)"
 
 echo "Creating HaxeStudioPortable.paf.exe..."
-cd $THIS_FILE_DIR/target
+cd "$THIS_FILE_DIR/target"
 
 # 7z switches: https://sevenzip.osdn.jp/chm/cmdline/switches/
 # -mqs sorts files by type instead by name which increases compression ratio

@@ -20,10 +20,15 @@
    <artifactId>org.haxe4e.studio.product</artifactId>
    <packaging>eclipse-repository</packaging>
 
+   <properties>
+      <!-- must match the product uid defined in one *.product file in this directory -->
+      <tycho.product.uid>org.haxe4e.studio</tycho.product.uid>
+   </properties>
+
    <build>
       <plugins>
          <plugin>
-            <!-- https://wiki.eclipse.org/Tycho/eclipse-repository#Creating_product_distributions -->
+          <!-- https://wiki.eclipse.org/Tycho/eclipse-repository#Creating_product_distributions -->
             <groupId>org.eclipse.tycho</groupId>
             <artifactId>tycho-p2-director-plugin</artifactId>
             <executions>
@@ -41,7 +46,7 @@
             <configuration>
                <products>
                   <product>
-                     <id>org.haxe4e.studio</id>
+                     <id>${tycho.product.uid}</id>
                   </product>
                </products>
                <!--<formats>
@@ -54,4 +59,3 @@
       </plugins>
    </build>
 </project>
-

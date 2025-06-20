@@ -67,7 +67,7 @@
 
 
    <properties>
-      <java.version>21</java.version>
+      <java.version>23</java.version>
       <tycho.version>4.0.13</tycho.version>
       <jgit.dirtyWorkingTree>error</jgit.dirtyWorkingTree>
 
@@ -291,7 +291,7 @@
 
                <!-- https://www.eclipse.org/justj/?page=documentation#products -->
                <!-- major version must match the one selected in build.target file -->
-               <executionEnvironment>org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped-23</executionEnvironment>
+               <executionEnvironment>org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped-${java.version}</executionEnvironment>
 
                <target>
                   <file>${maven.multiModuleProjectDirectory}/build.target</file>
