@@ -47,10 +47,6 @@ on:
         default: true
         type: boolean
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   ###########################################################
   eclipse-product-build:
