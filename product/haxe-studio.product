@@ -339,6 +339,7 @@ version(s), and exceptions or additional permissions here}.&quot;
 
    <features>
       <feature id="org.eclipse.platform"/>
+      <feature id="org.eclipse.epp.mpc" installMode="root"/>
       <feature id="org.eclipse.egit" installMode="root"/>
       <feature id="org.eclipse.egit.gitflow.feature" installMode="root"/>
       <feature id="org.eclipse.jgit" installMode="root"/>
