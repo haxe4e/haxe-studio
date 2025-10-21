@@ -2,7 +2,7 @@
 <?pde version="3.8"?>
 <target includeMode="feature" name="Haxe Studio Build Target">
 
-    <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-23"/>
+    <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-25"/>
 
     <locations>
 
@@ -12,35 +12,26 @@
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/justj/jres/23/updates/release/latest"/>
+            <repository location="https://download.eclipse.org/justj/jres/25/updates/release/latest"/>
             <unit id="org.eclipse.justj.openjdk.hotspot.jre.minimal.stripped.feature.group" version="0.0.0"/>
         </location>
 
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/releases/2025-06/"/>
+            <repository location="https://download.eclipse.org/releases/2025-09/"/>
             <unit id="org.eclipse.egit.feature.group" version="0.0.0"/>
             <unit id="org.eclipse.egit.gitflow.feature.feature.group" version="0.0.0"/>
             <unit id="org.eclipse.jgit.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.jgit.gpg.bc.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.jgit.http.apache.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.jgit.ssh.apache.feature.group" version="0.0.0"/>
             <unit id="org.eclipse.mylyn.wikitext.feature.feature.group" version="0.0.0"/>
             <unit id="org.eclipse.tm.terminal.feature.feature.group" version="0.0.0"/>
             <unit id="org.eclipse.wildwebdeveloper.feature.feature.group" version="0.0.0"/>
             <unit id="org.eclipse.wildwebdeveloper.embedder.node.feature.feature.group" version="0.0.0"/>
         </location>
 
-        <!-- workaround to solve since 2025-03:
-        [ERROR] Cannot resolve dependencies of project org.haxe4e.studio:org.haxe4e.studio.product:eclipse-repository:1.0.0-SNAPSHOT
-        [ERROR]  with context {osgi.os=linux, org.eclipse.update.install.features=true, osgi.arch=x86_64, org.eclipse.update.install.sources=true, osgi.ws=gtk, org.eclipse.justj.buildtime=true}
-        [ERROR]   Software being installed: org.haxe4e.studio 1.0.0.qualifier
-        [ERROR]   Missing requirement: org.haxe4e.studio 1.0.0.qualifier requires 'org.eclipse.equinox.p2.iu; org.eclipse.ecf.core.ssl.feature.feature.group 0.0.0' but it could not be found: See log for details
-        -->
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/rt/ecf/latest/site.p2/"/>
-            <unit id="org.eclipse.ecf.core.ssl.feature.feature.group" version="0.0.0"/>
-            <unit id="org.eclipse.ecf.filetransfer.ssl.feature.feature.group" version="0.0.0"/>
-        </location>
-
-        <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <repository location="https://download.eclipse.org/eclipse/updates/4.36/"/>
+            <repository location="https://download.eclipse.org/eclipse/updates/4.37/"/>
             <unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0"/>
             <unit id="org.eclipse.sdk.ide" version="0.0.0"/>
         </location>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Haxe Studio" uid="org.haxe4e.studio" id="org.haxe4e.studio.plugin.product" application="org.haxe4e.studio.application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true" autoIncludeRequirements="true">
+<product name="Haxe Studio" uid="org.haxe4e.studio" id="org.haxe4e.studio.plugin.product" application="org.haxe4e.studio.application" version="1.0.0.qualifier" type="features" includeLaunchers="true" includeJRE="true" autoIncludeRequirements="true">
 
    <aboutInfo>
       <image path="src/main/resources/images/logo/haxe4e_logo64x64.png"/>
@@ -338,21 +338,7 @@ version(s), and exceptions or additional permissions here}.&quot;
    </plugins>
 
    <features>
-      <feature id="org.eclipse.e4.rcp"/>
-      <feature id="org.eclipse.ecf.core.feature"/>
-      <feature id="org.eclipse.ecf.core.ssl.feature"/>
-      <feature id="org.eclipse.ecf.filetransfer.feature"/>
-      <feature id="org.eclipse.ecf.filetransfer.httpclient5.feature"/>
-      <feature id="org.eclipse.ecf.filetransfer.ssl.feature"/>
-      <feature id="org.eclipse.emf.common"/>
-      <feature id="org.eclipse.emf.ecore"/>
-      <feature id="org.eclipse.equinox.p2.core.feature"/>
-      <feature id="org.eclipse.equinox.p2.extras.feature"/>
-      <feature id="org.eclipse.equinox.p2.rcp.feature"/>
-      <feature id="org.eclipse.equinox.p2.user.ui"/>
-      <feature id="org.eclipse.help"/>
       <feature id="org.eclipse.platform"/>
-      <feature id="org.eclipse.rcp"/>
       <feature id="org.eclipse.egit" installMode="root"/>
       <feature id="org.eclipse.egit.gitflow.feature" installMode="root"/>
       <feature id="org.eclipse.jgit" installMode="root"/>
@@ -394,8 +380,8 @@ version(s), and exceptions or additional permissions here}.&quot;
    </configurations>
 
    <repositories>
-      <repository location="https://raw.githubusercontent.com/haxe4e/haxe-studio/updatesite/" enabled="true" />
-      <repository location="https://raw.githubusercontent.com/haxe4e/haxe4e/updatesite/" enabled="true" />
+      <repository location="https://raw.githubusercontent.com/haxe4e/haxe4e/updatesite/" name="Haxe4E" enabled="true" />
+      <repository location="https://raw.githubusercontent.com/haxe4e/haxe-studio/updatesite/" name="Haxe Studio" enabled="true" />
    </repositories>
 
    <preferencesInfo>

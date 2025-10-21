@@ -27,11 +27,11 @@
    </license>
 
    <url>
-      <update label="Haxe4E Latest" url="https://raw.githubusercontent.com/haxe4e/haxe-studio/updatesite/"/>
+      <update label="Haxe Studio Latest" url="https://raw.githubusercontent.com/haxe4e/haxe-studio/updatesite/"/>
    </url>
 
    <requires>
-      <import plugin="org.eclipse.platform" version="4.36.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.platform" version="4.37.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.contenttype"/>
       <import plugin="org.eclipse.core.externaltools"/>
       <import plugin="org.eclipse.core.filebuffers"/>
@@ -50,9 +50,9 @@
       <import plugin="org.eclipse.ui.ide.application"/>
       <import plugin="org.eclipse.ui.genericeditor"/>
       <import plugin="org.eclipse.ui.workbench.texteditor"/>
-      <import plugin="org.apache.commons.commons-io" version="2.17.0" match="compatible"/>
-      <import plugin="org.apache.commons.lang3" version="3.17.0" match="compatible"/>
-      <import plugin="net.sf.jstuff.core" version="8.1.0" match="compatible"/>
+      <import plugin="org.apache.commons.commons-io" version="2.20.0" match="compatible"/>
+      <import plugin="org.apache.commons.lang3" version="3.19.0" match="compatible"/>
+      <import plugin="net.sf.jstuff.core" version="8.2.0" match="compatible"/>
    </requires>
 
    <plugin

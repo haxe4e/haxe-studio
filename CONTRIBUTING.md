@@ -37,6 +37,12 @@ When submitting a pull request:
 - Include tests for any new features or significant changes.
 - Reference the relevant issue(s) in your pull request description.
 
+### Source Code Formatting
+
+Before committing your code ensure it is formatted according the [vegardit.com Eclipse formatter rules](https://github.com/vegardit/vegardit-maven-parent/blob/main/src/etc/eclipse-formatter.xml).
+
+IntelliJ users can use the [Eclipse Code Formatter](https://plugins.jetbrains.com/plugin/6546-eclipse-code-formatter) plugin to import and use the formatter settings.
+
 
 ## Licensing
 
