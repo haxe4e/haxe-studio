@@ -68,7 +68,7 @@
 
    <properties>
       <java.version>25</java.version>
-      <tycho.version>5.0.1</tycho.version>
+      <tycho.version>5.0.2</tycho.version>
       <jgit.dirtyWorkingTree>error</jgit.dirtyWorkingTree>
 
       <!-- to prevent:
